@@ -1,0 +1,19 @@
+Client Name: Rabia
+
+Accessing the Backend Admin screen:
+
+https://zobaba.com/fitness/
+username: 123456789
+password: 15176
+
+
+FTP Details:
+Username: fitness@zobaba.com
+Password: Y2P2qn1NSwrF
+
+
+Mysql Access:
+
+http://phpmyadmin.zobaba.com/
+username: rabialin_fitness
+password: u02pMS(O2baZ

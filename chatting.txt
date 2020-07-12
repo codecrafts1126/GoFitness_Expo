@@ -1,0 +1,1040 @@
+Hi
+I am Silas
+Rabia Abu Hanna 11/08 10:29 PM
+Hi
+You 11/08 10:30 PM
+Hi
+question?
+Rabia Abu Hanna 11/08 10:30 PM
+Yes please
+You 11/08 10:30 PM
+I already ran your app.
+Rabia Abu Hanna 11/08 10:30 PM
+Ok
+You 11/08 10:31 PM
+right?
+Rabia Abu Hanna 11/08 10:31 PM
+yes
+But the login is hitting the Firebase
+You 11/08 10:32 PM
+I see
+Do you have back-end?
+"Need to change the access to use the personal backend instead of Firebase"
+Rabia Abu Hanna 11/08 10:34 PM
+yes
+Of course
+You 11/08 10:34 PM
+for this, would you provide back-end or api?
+Rabia Abu Hanna 11/08 10:34 PM
+Working on it
+But for example
+Check the code
+There’s examples how to reach the backend
+Rabia Abu Hanna 11/08 10:34 PM
+Not from the Signup and login
+Check the Workouts for example
+You 11/08 10:35 PM
+can you share code of back-end?
+Rabia Abu Hanna 11/08 10:36 PM
+I will gave you access to Mysql and FTP
+It will be fine?
+You 11/08 10:36 PM
+OK
+Rabia Abu Hanna 11/08 10:36 PM
+let me prepare it for you
+You 11/08 10:36 PM
+did you use cpanel?
+Rabia Abu Hanna 11/08 10:36 PM
+Yes but I’ve many other websites there
+so I can’t share full access to it
+You 11/08 10:36 PM
+understand
+don't worry
+Rabia Abu Hanna 11/08 10:37 PM
+Sharing with you all the relevant details hold on
+You 11/08 10:37 PM
+I need only api for login
+OK
+and for test, would you send current login account for app?
+Rabia Abu Hanna 11/08 10:38 PM
+Of course
+You 11/08 10:39 PM
+and, what should i add for social id?
+facebook and google
+and then?
+You 11/08 10:40 PM
+"Social ID Number" is mean, facebook login and google login
+Rabia Abu Hanna 11/08 10:40 PM
+Where?
+You 11/08 10:40 PM
+right?
+Rabia Abu Hanna 11/08 10:40 PM
+In the Settings ?
+No no
+It’s National ID
+You 11/08 10:41 PM
+got it
+Rabia Abu Hanna 11/08 10:41 PM
+It’s not related to Social media
+In the APP that you have shared with me
+I also liked the Membership purchase screen
+You 11/08 10:42 PM
+https://prnt.sc/pu9qd5
+Rabia Abu Hanna 11/08 10:42 PM
+Can we do something similar to it?
+I know - but it’s a Person National/Goverment ID
+Citizenship number
+You 11/08 10:43 PM
+understand
+so, I can do it for first requirement after you provide api.
+right?
+would you send login account for test?
+Rabia Abu Hanna 11/08 10:49 PM
+For now you can register 
+You 11/08 10:49 PM
+OK
+Rabia Abu Hanna 11/08 10:49 PM
+It will be registered in Firebase
+Then you can login
+You 11/08 10:49 PM
+got it
+Rabia Abu Hanna 11/08 10:49 PM
+To check the whole App
+But still you need to improve all those screens
+I mean the login and the signup …
+Right?
+You 11/08 10:51 PM
+first i will change signup page
+ok?
+Rabia Abu Hanna 11/08 10:52 PM
+Ok
+Please work on the design
+You 11/08 10:52 PM
+https://prnt.sc/pu9vvl
+Rabia Abu Hanna 11/08 10:52 PM
+And will share the APIs
+You 11/08 10:52 PM
+OK
+Rabia Abu Hanna 11/08 10:52 PM
+Make a nice screen and easy for the user
+🙂
+I think you have to prepare the i18n for the multi language as well
+It’s better to deal with it now, no?
+Rabia Abu Hanna 11/08 10:53 PM
+What do u think?
+You 11/08 10:54 PM
+OK
+You 11/08 10:59 PM
+for multi language, only en, he, ar?
+You 11/08 11:04 PM
+Hi, Question?
+Rabia Abu Hanna 11/08 11:07 PM
+I may add more
+But it’s not a matter now
+In general I need 3 language so far
+You 11/08 11:07 PM
+so should i implement RTL?
+Rabia Abu Hanna 11/08 11:07 PM
+Of course for both AR and HE
+You 11/08 11:07 PM
+I see
+Rabia Abu Hanna 11/08 11:08 PM
+Send me your email address to forward you the FTP details
+You 11/08 11:09 PM
+star.master.1126@outlook.com
+Rabia Abu Hanna 11/08 11:09 PM
+ok
+You 11/08 11:10 PM
+where should i add change language?
+in setting menu
+right?
+Rabia Abu Hanna 11/08 11:15 PM
+Sent 
+Right
+But my question is more related to the login and sign up screens
+How to let the user select other language
+Rabia Abu Hanna 11/08 11:16 PM
+It’s valid for Login / Sign up and Forgot password
+You 11/08 11:18 PM
+recieved
+so, I will select language first page before login
+i will add option for select language on start page
+Rabia Abu Hanna 11/08 11:20 PM
+Exactly also in the Settings cause once the user login 
+You 11/08 11:20 PM
+got it
+Rabia Abu Hanna 11/08 11:24 PM
+Please note that no need to do login every time 
+Once login done, the next time user will redirected directly to the main page
+Agreed?
+I think it’s working same now
+You 11/08 11:27 PM
+Hi, Can you share back-end code and db?
+11/09/19
+Rabia Abu Hanna 11/09 12:22 AM
+?
+You 11/09 12:22 AM
+would you provide back-end source and db?
+Rabia Abu Hanna 11/09 12:22 AM
+It’s in the Email
+You 11/09 12:23 AM
+i see
+sorry
+take your time
+Rabia Abu Hanna 11/09 12:23 AM
+NP
+Rabia Abu Hanna 11/09 1:50 AM
+Login API
+https://zobaba.com/fitness/json/user_login.php
+Rabia Abu Hanna 11/09 1:50 AM
+Payload
+You 11/09 1:50 AM
+OK
+Rabia Abu Hanna 11/09 1:50 AM
+{
+   "user":{
+        "email":"123456789",
+        "password":"15176"
+   }
+}
+
+Can you try access it via Postman
+expected response
+{
+    "user": {
+        "name": "Super Advisor",
+        "email": "rabiaabuhanna@gmail.com",
+        "phone": "0524555844",
+        "unique_id": "5ae4acfdae2e93.35869730",
+        "privClass": "1",
+        "id": "123456789",
+        "weight": "0",
+        "height": "0",
+        "age": "1979",
+        "sex": "0",
+        "status": "1",
+        "birthdate": null
+    },
+    "result": "success",
+    "message": "login_success"
+}
+You 11/09 1:52 AM
+i see
+Rabia Abu Hanna 11/09 1:52 AM
+Once login need to store those details
+You 11/09 1:52 AM
+got it
+Rabia Abu Hanna 11/09 1:52 AM
+Please check and confirm if this working as expected
+So I can prepare the signup and the reset password
+You 11/09 1:53 AM
+just sec
+Rabia Abu Hanna 11/09 1:53 AM
+Please prepare nice messages 🙂
+When failure
+{
+    "result": "failure",
+    "message": "invalid_login_details"
+}
+When invalid
+{
+    "result": "failure",
+    "message": "invalid_params"
+}
+login_success, invalid_login_details and invalid_params
+Are the messages keys
+Rabia Abu Hanna 11/09 1:54 AM
+so we can retrieve the full message based on the language
+You 11/09 1:55 AM
+https://prnt.sc/puce89
+You 11/09 1:55 AM
+right?
+Rabia Abu Hanna 11/09 1:55 AM
+indeed
+correct
+;)
+🙂
+Rabia Abu Hanna 11/09 1:56 AM
+From your experience 
+You 11/09 1:57 AM
+Thank you
+Rabia Abu Hanna 11/09 1:57 AM
+Do you think it’s ok using such way
+?
+You 11/09 1:57 AM
+I am going on
+sure
+Rabia Abu Hanna 11/09 1:57 AM
+Where’s you’re live?
+Which City?
+You 11/09 1:57 AM
+Shenyang, Liaoning, china
+Rabia Abu Hanna 11/09 1:58 AM
+ok
+I would like if you can add Chinese file additional to the English, Arabic and hebrew
+You 11/09 1:58 AM
+I will send result for login in today.
+just sec
+Rabia Abu Hanna 11/09 1:59 AM
+Your time same as Manila 🙂
+We’ve big project there 
+Going to sleep?
+Rabia Abu Hanna 11/09 2:01 AM
+Do you need more things for now?
+You 11/09 2:01 AM
+how do you think about it?
+how?
+Rabia Abu Hanna 11/09 2:02 AM
+Very nice but I need to show only a selected languages 
+For now I need 3 and one Chinese as a bonus 🙂
+You 11/09 2:03 AM
+I am implementing it now
+I will get result in 1 hour
+now 3 lang OK.
+Rabia Abu Hanna 11/09 2:04 AM
+4
+Can you add the Chinese
+?
+You 11/09 2:04 AM
+sure
+got it
+Rabia Abu Hanna 11/09 2:04 AM
+Maybe I will learn it soon
+😉
+You 11/09 2:05 AM
+good
+😝
+Rabia Abu Hanna 11/09 2:05 AM
+Question
+You 11/09 2:05 AM
+please
+Rabia Abu Hanna 11/09 2:05 AM
+It will not load like this
+The user will expand it right?
+You 11/09 2:06 AM
+what do you mean?
+sorry, I don't understand
+Rabia Abu Hanna 11/09 2:06 AM
+Once loading the main page
+Will have two buttons 
+Login and Sign up
+right?
+You 11/09 2:06 AM
+sure
+Rabia Abu Hanna 11/09 2:07 AM
+Where do you want to put the languages picker?
+You 11/09 2:07 AM
+please check first image
+You 11/09 2:07 AM
+I added select language button
+right?
+Rabia Abu Hanna 11/09 2:08 AM
+Can we design in a diff way?
+I don’t want it as main button
+You 11/09 2:08 AM
+your mind?
+Rabia Abu Hanna 11/09 2:10 AM
+Well
+Can you check other apps
+Rabia Abu Hanna 11/09 2:14 AM
+Can we add a swipe left and right after both buttons?
+Only text
+not as a button
+You 11/09 2:14 AM
+let me try it
+Rabia Abu Hanna 11/09 2:22 AM
+Looks nicer, no?
+You 11/09 2:22 AM
+nice
+I will do it by your idea
+Rabia Abu Hanna 11/09 2:23 AM
+Don’t put flags
+You 11/09 2:23 AM
+got it
+Rabia Abu Hanna 11/09 2:23 AM
+Just the Welcome work in all the languages
+word
+You 11/09 2:24 AM
+but you have to provide words translated.
+You 11/09 2:24 AM
+ok?
+Rabia Abu Hanna 11/09 2:24 AM
+This is why I need access to the github
+so I can edit those files online
+You 11/09 2:25 AM
+I will commit when complete one functionality.
+ok?
+Rabia Abu Hanna 11/09 2:26 AM
+On my GitHub?
+You 11/09 2:26 AM
+ok
+Rabia Abu Hanna 11/09 2:27 AM
+Please install GitLens extension 
+You’re using VSC
+Right?
+Visual Studio Code
+You 11/09 2:28 AM
+i am using gethubdesktop
+Rabia Abu Hanna 11/09 2:28 AM
+You’ve Mac or PC?
+Rabia Abu Hanna 11/09 2:38 AM
+https://apps.apple.com/us/app/workout-for-women-fitness-app/id839285684
+Rabia Abu Hanna 11/09 2:38 AM
+This App as you’ve explained me before developed by you?
+You 11/09 2:38 AM
+sure
+Rabia Abu Hanna 11/09 2:40 AM
+Really nice design
+Please try to be close to it 🙂
+I liked the Drag down when showing the pictures
+Rabia Abu Hanna 11/09 2:41 AM
+Also the Memberships screen where we can select a membership plan to pay
+You 11/09 2:41 AM
+but it's swift code, i will do it as possible
+Rabia Abu Hanna 11/09 2:41 AM
+Of course
+Try your best
+You 11/09 2:42 AM
+understand
+Rabia Abu Hanna 11/09 2:42 AM
+Ok
+Do you need anything from me?
+I need to drop
+You 11/09 2:43 AM
+current, nothing
+if i have question, anytime will ping you
+ok?
+Rabia Abu Hanna 11/09 2:43 AM
+Sure
+Good night
+You 11/09 2:43 AM
+take your time
+sweet dream
+Rabia Abu Hanna 11/09 2:43 AM
+Thanks u too
+Rabia Abu Hanna 11/09 4:56 AM
+Signup API
+https://zobaba.com/fitness/json/user_submit.php
+Payload example:
+{
+   "user":{
+        "email":"rabih11@gmail.com",
+        "id":"25588312",
+        "phone":"0524555844",
+        "name":"Mr. Rabia",
+        "birthdate":"1977-09-10",
+        "sex": "1",
+        "status":"1"
+   }
+}
+
+You 11/09 10:07 AM
+Please check multi language
+You 11/09 12:54 PM
+https://drive.google.com/open?id=1ZD8KgaJiBIyhzjcKi5TZoYfvF57_sZx9
+You 11/09 12:54 PM
+Please check it and would you release first milestone for login screen
+Rabia Abu Hanna 11/09 5:10 PM
+Very nice
+Have you succeeded to login and reach the main page?
+I can see several issues
+1. The languages - Don’t put arrows, let the user swipe the fingers left & right
+2. The Back button is not functioning as expected - I’m not blaming you but can you check why need to click many times to work?
+3. Same for the button, the messages not really nice - and very slow to visible! Can you change the messages to be nicer and more hiTech?
+Rabia Abu Hanna 11/09 5:34 PM
+Here
+You 11/09 5:34 PM
+Don't say about zoom on freelancer
+Rabia Abu Hanna 11/09 5:34 PM
+Hhh
+You 11/09 5:34 PM
+it's not freelancer rule
+understand?
+Rabia Abu Hanna 11/09 5:35 PM
+Sue
+NP
+I’ve replace with *Room
+Hhhh
+You 11/09 5:36 PM
+OK
+2. my mistake
+it's working as well
+I failed my touch
+understand?
+button is small
+Rabia Abu Hanna 11/09 5:37 PM
+But I think it’s too much goes to left
+Maybe it needs to be more to right
+No?
+You 11/09 5:37 PM
+it's no problem
+Rabia Abu Hanna 11/09 5:37 PM
+Again, I want your best in UI side
+I like great design
+It’s User experience 
+I don’t want to claim on it
+Customers**
+BTW
+I want to explain you something very important
+I will create other Applications based on this one
+So can you please put all the customisation things such like pictures, strings, icons and other changes in ONE PLACE?!
+So when trying to create a new App, I want to change everything including the colours from one place
+Rabia Abu Hanna 11/09 5:40 PM
+Can you please keep this thing in your mind?
+You 11/09 5:41 PM
+why your requirement is changed often?
+Rabia Abu Hanna 11/09 5:41 PM
+No no
+It’s not changing man
+But again
+I don’t want to change common things from multiple locations
+You 11/09 5:42 PM
+so, do you want to new design for this app?
+Rabia Abu Hanna 11/09 5:42 PM
+Not really
+I’m explaining myself again
+You 11/09 5:42 PM
+or else do you want to fix based your project?
+Rabia Abu Hanna 11/09 5:42 PM
+First
+You’re the experience person
+I think you should make this App awesome and very nice, right?
+So if you see something not good, I expect you to change it or fix it or improve it
+as you can see right to do
+You 11/09 5:44 PM
+fully understand
+I am going on so
+Rabia Abu Hanna 11/09 5:44 PM
+That’s all
+You’re the Boss here
+You 11/09 5:44 PM
+OK
+Rabia Abu Hanna 11/09 5:44 PM
+🙂
+You 11/09 5:44 PM
+so I have already complete login page
+right?
+and multi language
+right?
+did you check video?
+Rabia Abu Hanna 11/09 5:45 PM
+That’s fine, but still need to fix those things I’ve complain about it
+Did you review it?
+You 11/09 5:45 PM
+for swipe navigation, your project will complex
+Rabia Abu Hanna 11/09 5:46 PM
+What you mean?
+The Swipe will be also in the Events screen 
+So this should be same for the Languages 
+You 11/09 5:46 PM
+ok
+Rabia Abu Hanna 11/09 5:47 PM
+What about the Payment
+Do you want me to release it?
+You 11/09 5:47 PM
+second feedback is don't worry
+it's work as well
+Rabia Abu Hanna 11/09 5:47 PM
+BTW
+How I can check your work?
+Why the Github not updated?
+Rabia Abu Hanna 11/09 5:47 PM
+I need to check in my iPhone
+You 11/09 5:48 PM
+for first result, thank you for release it now
+I will upload it on github
+would you release milestone now?
+Rabia Abu Hanna 11/09 5:48 PM
+What is the next milestone?
+You 11/09 5:50 PM
+for sign up and forgot password page: $50
+Rabia Abu Hanna 11/09 5:50 PM
+Ok
+You 11/09 5:50 PM
+OK?
+I accepted your job
+Rabia Abu Hanna 11/09 5:50 PM
+Can we do it after checking the login in my iPhone?
+You 11/09 5:50 PM
+OK
+I will upload it now
+Rabia Abu Hanna 11/09 5:51 PM
+Tell me
+I’ve got a payment of 4.90$ from Freelancer
+What is that?
+You 11/09 5:52 PM
+it's freelancer fee. 3% per 100$
+Rabia Abu Hanna 11/09 5:52 PM
+Really
+So how much fee I will pay?
+You 11/09 5:52 PM
+just sec
+My suggestion
+You 11/09 5:53 PM
+Can you pay on paypal
+Rabia Abu Hanna 11/09 5:53 PM
+Of course
+You 11/09 5:53 PM
+directly
+OK
+Rabia Abu Hanna 11/09 5:53 PM
+Same for me
+You 11/09 5:53 PM
+OK
+so current milestone keep until complete this job
+Rabia Abu Hanna 11/09 5:53 PM
+So please finish the Sign up then I will pay the 50$ directly in Paypal
+Is it fine?
+You 11/09 5:54 PM
+for login, now can you pay $50 on paypal?
+and then for signup, $50. etc
+Rabia Abu Hanna 11/09 5:54 PM
+Ohhh
+Wait
+You 11/09 5:55 PM
+and final release milestone on freelancer
+$50
+Rabia Abu Hanna 11/09 5:55 PM
+What about the 50$ in Freelancer?
+You 11/09 5:55 PM
+ok?
+final
+Rabia Abu Hanna 11/09 5:55 PM
+Mean I will release once all the project done?
+Clear
+You 11/09 5:55 PM
+sure
+Rabia Abu Hanna 11/09 5:55 PM
+Which email for PayPal you’re using?
+You 11/09 5:55 PM
+$600 on paypal and final $50 on freelancer
+right?
+I will send email
+just sec
+Rabia Abu Hanna 11/09 5:56 PM
+Right
+Based on the Steps
+You 11/09 5:56 PM
+OK
+Rabia Abu Hanna 11/09 5:57 PM
+I will pay 50$ today afternoon, Till then please share the code in GitHub to see if we have an issue
+But before that please fix the messages 
+And the other things talked about it
+You 11/09 5:57 PM
+OK
+Rabia Abu Hanna 11/09 5:57 PM
+Do you have nice messages to display?
+You 11/09 5:58 PM
+would you provide your paypal email, I will send invoice
+it's fine
+ok?
+Rabia Abu Hanna 11/09 6:00 PM
+rabiaah@gmail.com
+Try to improve the design please! As I’ve already told - The App you’ve show me very nice from the Design perspectives 
+So try to keep High design performance 😉
+Rabia Abu Hanna 11/09 6:47 PM
+Success Response for signup
+{
+    "result": "success",
+    "message": "signup_success"
+}
+User already Registered Response
+{
+    "result": "failure",
+    "message": "user_already_registered"
+}
+Empty request
+{
+    "result": "failure",
+    "message": "invalid_params"
+}
+Invalid email address
+{
+    "result": "failure",
+    "message": "invalid_email"
+}
+For the reset Password will share soon!
+Rabia Abu Hanna 11/09 7:08 PM
+API:
+
+https://zobaba.com/fitness/json/user_reset.php
+
+Payload (Request):
+
+{
+   "user":{
+        "email":"rabiah11@gmail.com",
+        "id":"2558831"
+   }
+}
+
+
+
+Responses:
+
+{
+    "result": "success",
+    "message": "reset_password_success"
+}
+
+{
+    "result": "failure",
+    "message": "invalid_user_details"
+}
+
+{
+    "result": "failure",
+    "message": "invalid_email"
+}
+
+
+Thanks
+Please update me
+You 11/09 9:17 PM
+Hi
+Hi
+You 11/09 9:23 PM
+Would you push your master repository on your GitHub/fitness?
+your last version
+By my mistake, your repository is upgraded
+Rabia Abu Hanna 11/09 10:32 PM
+Hi Silas
+To which email to send the code?
+Rabia Abu Hanna 11/09 10:38 PM
+?
+Rabia Abu Hanna 11/09 11:16 PM
+Sent
+Events API:
+
+Response Example:
+
+Events API:
+https://zobaba.com/fitness/json/events.php
+
+Events Request (Payload):
+
+{
+   "user":{
+        "unique_id":"5ae4acfdae2e93.35869730"
+   },
+   "event_list":{
+   		"event_date": "2019-11-11"
+   }
+}
+
+Events Response example:
+
+{
+    "result": "success",
+    "message": "events_list",
+    "event_list": [
+        {
+            "EVNT_OBJID": "193",
+            "EVNT_DATE": "2019-11-11",
+            "DATE_FORMAT(EVNT_START_TIME, \"%H:%i\")": "21:00",
+            "DATE_FORMAT(EVNT_END_TIME, \"%H:%i\")": "22:00",
+            "EVNT_AVAILABILITY": "20",
+            "EVNT_STATUS": "0",
+            "CLSS_OBJID": "19",
+            "CLSS_NAME": "גב בטן",
+            "CLSS_IMG": "class_img_33.jpg",
+            "PLCE_OBJID": "3",
+            "PLCE_NAME": "חוף הכרמל",
+            "PLCE_LATI": "32.79562627690744",
+            "PLCE_LONGI": "34.95695114135742",
+            "SUM(ENRLL_USER)": "1",
+            "SUM(ENRLL_COUNT)": "4",
+            "SUM(EXPIRY_STATUS)": "4",
+            "EVNT_SCHEDULED_DATE": "2019-10-09",
+            "EVNT_SCHEDULED_TIME": "16:36:00",
+            "COACH_ID": "1",
+            "COACH_NAME": "Rabia",
+            "COACH_IMG": "coach_img_1567326060.jpg"
+        }
+    ]
+}
+
+
+After login, the request must contains the unique_id back during the login to pass the authentication 
+When no events:
+{
+    "result": "failure",
+    "message": "no_events_found"
+}
+When missing mandatory parameters 
+{
+    "result": "failure",
+    "message": "invalid_params"
+}
+When user not authorised 
+{
+    "result": "failure",
+    "message": "authentication_failed"
+}
+Yesterday
+Rabia Abu Hanna Yesterday 2:18 AM
+?
+You Yesterday 2:52 AM
+Hi
+Sorry for late reply
+Rabia Abu Hanna Yesterday 2:53 AM
+Hi
+No issues
+You Yesterday 2:54 AM
+Thank you
+Rabia Abu Hanna Yesterday 2:54 AM
+I’ve sent you more APIs
+You Yesterday 2:54 AM
+I already upload your git repository.
+DId you check it?
+Rabia Abu Hanna Yesterday 2:54 AM
+Nope
+Not yet
+You Yesterday 2:54 AM
+OK
+Rabia Abu Hanna Yesterday 2:54 AM
+Can I can load it?
+You Yesterday 2:55 AM
+sure
+Rabia Abu Hanna Yesterday 2:55 AM
+I want to ask you something
+You Yesterday 2:56 AM
+sure
+Rabia Abu Hanna Yesterday 2:56 AM
+Did you think about a nice sign up screen design?
+I’ve shared a mock-up only
+You Yesterday 2:56 AM
+I see
+I will send re-design screenshot in 1 hour
+Rabia Abu Hanna Yesterday 2:58 AM
+I forget to add one thing there
+You Yesterday 2:58 AM
+Now I just wake up
+password?
+Rabia Abu Hanna Yesterday 2:58 AM
+The user profile, I’ve mentioned it in the profile screen only
+The password auto generated
+No need to have it
+I mean the user picture or image
+You Yesterday 2:59 AM
+haha, 
+ok,
+I will add it
+Rabia Abu Hanna Yesterday 3:00 AM
+I have to prepare the backend as well
+Rabia Abu Hanna Yesterday 3:00 AM
+Can you share what is needed from the backend?
+You Yesterday 3:01 AM
+for signup page?
+Rabia Abu Hanna Yesterday 3:01 AM
+Yes
+You Yesterday 3:02 AM
+{
+   "user":{
+        "email":"rabih11@gmail.com",
+        "id":"25588312",
+        "phone":"0524555844",
+        "name":"Mr. Rabia",
+        "birthdate":"1977-09-10",
+        "sex": "1",
+        "status":"1"
+   }
+}
+and photo url
+Rabia Abu Hanna Yesterday 3:03 AM
+I think I have an example
+I will prepare it then will check if it’s uploading it or not
+You Yesterday 3:04 AM
+ok
+when can you pay $50?
+when you send me your paypal email, I will send invoice.
+would you provide paypal email?
+Rabia Abu Hanna Yesterday 3:09 AM
+I’ve sent you already, but we agree that I need to check what has been done so far, and that the messages fixed and we can access the main page after successful login
+rabiaah@gmail.com
+You Yesterday 3:11 AM
+OK
+Rabia Abu Hanna Yesterday 3:15 AM
+Did you fix those items?
+You Yesterday 3:16 AM
+Give me some time
+I am just wake up
+I am going on
+Rabia Abu Hanna Yesterday 3:16 AM
+☕
+Drink coffee
+And update me
+Hhhh
+You Yesterday 3:17 AM
+Thank you
+Rabia Abu Hanna Yesterday 3:32 AM
+Silas
+You Yesterday 3:32 AM
+Hi
+Rabia Abu Hanna Yesterday 3:32 AM
+How I can download the code from GitHub directly via VCS?
+Do you have Terminal command?
+You Yesterday 3:33 AM
+Can you use githubdesktop app or sourcetree
+but I refer githubdesktop app
+Rabia Abu Hanna Yesterday 3:33 AM
+Downloading it
+To do clone?
+You Yesterday 3:37 AM
+sign in and then file/clone repository
+Rabia Abu Hanna Yesterday 3:37 AM
+Done
+What is next
+Do I need to update the code?
+Or just expo start?
+You Yesterday 3:37 AM
+do you have anydesk?
+or teamviewer?
+Rabia Abu Hanna Yesterday 3:38 AM
+WE’RE here man
+Zoom
+You Yesterday 3:38 AM
+OK
+Please share your screen
+Rabia Abu Hanna Yesterday 3:40 AM
+Can you see?
+You Yesterday 3:40 AM
+none
+I am new about zoom
+Rabia Abu Hanna Yesterday 3:58 AM
+Do you understand what I mean?
+You Yesterday 3:59 AM
+yes, but few. I broken English, so would you re-send on chat?
+sorry
+Rabia Abu Hanna Yesterday 4:00 AM
+1. The languages need to remove the bullets and keep only text
+2. Change the App Font to be like your App that I show you
+3. Change the Error messages to something nicer
+You Yesterday 4:01 AM
+you mean, about response message?
+Rabia Abu Hanna Yesterday 4:01 AM
+yes
+You Yesterday 4:02 AM
+ok
+and then change font,
+only about English?
+or all language?
+You Yesterday 4:03 AM
+you mean? for change error message, do you want to change dialog format or else message content?
+Rabia Abu Hanna Yesterday 4:03 AM
+What is the Font name in your App?
+You Yesterday 4:04 AM
+Just sec
+Rabia Abu Hanna Yesterday 4:04 AM
+The message content I will change it later
+The dialog box not nice
+You Yesterday 4:04 AM
+your idea?
+Toast show not nice?
+Rabia Abu Hanna Yesterday 4:08 AM
+https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwjdz8yj993lAhWRqaQKHYNECiQQjRx6BAgBEAQ&url=https%3A%2F%2Fgithub.com%2Fmadhavanmalolan%2Fawesome-reactnative-ui&psig=AOvVaw3dUikJ5rRrbnWGgrw0sjEn&ust=1573416451830577
+You Yesterday 4:09 AM
+haha
+got it
+Rabia Abu Hanna Yesterday 4:10 AM
+But to show it from bottom to top
+It’s very nice 
+What do you think?
+You Yesterday 4:10 AM
+OK
+let me try it
+Rabia Abu Hanna Yesterday 4:10 AM
+thanks
+Rabia Abu Hanna Yesterday 4:17 AM
+https://camo.githubusercontent.com/2a5dcd1d344b51d58ac8a1c7294b4e9dcb0d8ed9/68747470733a2f2f7261772e6769746875622e636f6d2f746573747368616c6c706173732f72656163742d6e61746976652d64726f70646f776e616c6572742f6d61737465722f73637265656e73686f74732f64656d6f2e676966
+It’s a gif example
+You Yesterday 4:17 AM
+got it
+Rabia Abu Hanna Yesterday 4:17 AM
+So we can use also the colours based on the status of the result from backend
+Rabia Abu Hanna Yesterday 5:13 AM
+Silas
+Do you know how to add file and json in postman to test the signup
+I’ve set file and file name, I can retrieve it in the server side but not able to get the JSON
+You Yesterday 7:30 AM
+Hi
+Would you provide apple dev account for test on iPhone?
+Rabia Abu Hanna Yesterday 1:15 PM
+Hi
+What do you mean?
+What kind of account this one?
+You Yesterday 1:16 PM
+can you send your apple dev account?
+for test iPhone app, you have to enter apple account.
+right?
+Rabia Abu Hanna Yesterday 1:19 PM
+How to create one? I’m using my personal account
+You Yesterday 1:19 PM
+right.
+would you share your account?
+You Yesterday 1:20 PM
+only for test app
+Rabia Abu Hanna Yesterday 1:21 PM
+I’ve rabiaah@gmail.com but still not sure what is needed !?
+You Yesterday 1:22 PM
+don't you know about apple dev account? don't worry
+Rabia Abu Hanna Yesterday 1:24 PM
+You mean to Authorize an Additional User to my iOS Developer Account?
+You Yesterday 1:24 PM
+sure
+Rabia Abu Hanna Yesterday 1:25 PM
+I will check and back to you, meanwhile send me your email so I can check how to add you
+You Yesterday 1:26 PM
+star.master.1126@outlook.com
+Rabia Abu Hanna Yesterday 1:26 PM
+Ok
+Rabia Abu Hanna Yesterday 1:44 PM
+So I need to you as admin to one APP?
+so you can access the testFlight area?
+You Yesterday 1:45 PM
+ok
+Rabia Abu Hanna Yesterday 1:45 PM
+What exactly do you need?
+I’ve sent an invite
+Can you check
+You Yesterday 1:46 PM
+I have to test app on iPhone, but I don't have ios developer account
+understand
+so I will use your account
+Rabia Abu Hanna Yesterday 1:47 PM
+Can you try what I’ve sent u?
+Is it enough?
+You Yesterday 1:48 PM
+i will check and ping you
+Rabia Abu Hanna Yesterday 1:48 PM
+ok
+Today I may not be available all the day as it’s Sunday
+I’ve installed the Zoom on my iPhone in case you need anything
+You Yesterday 1:49 PM
+OK
+have a good day
+Rabia Abu Hanna Yesterday 1:49 PM
+thanks
+You too
+Rabia Abu Hanna Yesterday 2:17 PM
+Hi
+Did you receive the invitation email?
+Rabia Abu Hanna Yesterday 4:49 PM
+Hi
+Can you check please?
+Rabia Abu Hanna Yesterday 6:50 PM
+Do you know how to send both File and JSON data in one request from Postman?
+Can you explain how do you want to upload image and sign up the user details in a once?
+Today
+Rabia Abu Hanna 12:23 AM
+Hi Silas, can you please send me your working available time?
+During the week
+You 12:31 AM
+Hi, Now here is AM 2:00. I will send working updated tomorrow. OK?
+Rabia Abu Hanna 12:32 AM
+Sure, please send me how to prepare the backend to include both file and payload json
+Also how to test it using Postman
+You 12:33 AM
+I am checking and will know you.
+Rabia Abu Hanna 12:34 AM
+Thanks
