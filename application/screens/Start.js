@@ -24,8 +24,9 @@ export default class Start extends Component {
 			languageList: [
 				{ key: 'language1', title: 'English', code: 'en' },
 				{ key: 'language2', title: 'عربى', code: 'ar' },
-				{ key: 'language3', title: 'עברי', code: 'he' },
-				{ key: 'language4', title: '中文', code: 'cn' }],
+				{ key: 'language3', title: 'עברית', code: 'he' },
+				{ key: 'language4', title: 'русский', code: 'ru' },
+				{ key: 'language5', title: '中文', code: 'cn' }],
 			currentlanguage: 'en'
 		};
 	}

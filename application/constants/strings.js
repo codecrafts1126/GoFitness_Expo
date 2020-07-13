@@ -81,4 +81,31 @@ export default {
     ST062: "Personalized Diet Plans",
     ST063: "Informative Posts & News",   
     ST064: "Best motivational gym quotes",
+
+    ST065: "Bodyparts",
+    ST066: "Exercises For Every Bodypart",
+    ST067: "Equipments",
+    ST068: "Home And Gym Equipments",
+    
+    ST097: "Sets",
+    ST098: "Reps",
+    ST099: "Rest",
+    ST100: "Equipments",
+    ST101: "Muscles Involved",
+    ST102: "Play",
+    ST103: "Pause",
+    
+    ST041: "Categories",
+    ST042: "Featured Recipes",
+    ST043: "Servings:",
+    ST044: "Cook Time:",
+    ST045: "Cal",
+
+    ST046: "Summary", 
+    ST047: "Ingredients", 
+    ST048: "Directions",
+    ST049: "Calories",
+    ST050: "Protein",
+    ST051: "Fat",
+    ST052: "Carbs" 
 };

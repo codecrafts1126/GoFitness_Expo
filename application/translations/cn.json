@@ -79,5 +79,31 @@
     "Exercise Video Guides": "Exercise Video Guides",
     "Personalized Diet Plans": "Personalized Diet Plans",
     "Informative Posts & News": "Informative Posts & News",   
-    "Best motivational gym quotes": "Best motivational gym quotes"
+    "Best motivational gym quotes": "Best motivational gym quotes",
+
+    "Bodyparts": "Bodyparts",
+    "Exercises For Every Bodypart": "Exercises For Every Bodypart",
+    "Equipments": "Equipments",
+    "Home And Gym Equipments": "Home And Gym Equipments",
+    
+    "Sets": "Sets",
+    "Reps": "Reps",
+    "Rest": "Rest",
+    "Muscles Involved": "Muscles Involved",
+    "Play": "Play",
+    "Pause": "Pause",
+    
+    "Categories": "Categories",
+    "Featured Recipes": "Featured Recipes",
+    "Servings:": "Servings:",
+    "Cook Time:": "Cook Time:",
+    "Cal": "Cal",
+
+    "Summary": "Summary", 
+    "Ingredients": "Ingredients", 
+    "Directions": "Directions",
+    "Calories": "Calories",
+    "Protein": "Protein",
+    "Fat": "Fat",
+    "Carbs": "Carbs" 
 }

@@ -13,12 +13,21 @@ import Home from '@screens/Home';
 import Events from '@screens/Events';
 import EventDetailScreen from '@screens/EventDetail';
 
+import ExercisesScreen from '@screens/Exercises';
+import EBodypartsScreen from '@screens/EBodyparts';
+import EquipmentsScreen from '@screens/Equipments';
+import ExerciseDetailsScreen from "@screens/ExerciseDetails";
+
+import DietsScreen from '@screens/Diets';
+import DietDetailsScreen from "@screens/DietDetails";
+
+
 import WorkoutsScreen from '../screens/Workouts';
-import ExercisesScreen from '../screens/Exercises';
-import DietsScreen from '../screens/Diets';
+// import ExercisesScreen from '../screens/Exercises';
+// import DietsScreen from '../screens/Diets';
 import PostsScreen from '../screens/Posts';
-import EBodypartsScreen from '../screens/EBodyparts';
-import EquipmentsScreen from '../screens/Equipments';
+// import EBodypartsScreen from '../screens/EBodyparts';
+// import EquipmentsScreen from '../screens/Equipments';
 import WGoalsScreen from "../screens/WGoals";
 import WLevelsScreen from "../screens/WLevels";
 import ExercisesByMuscleScreen from "../screens/ExercisesByMuscle";
@@ -28,8 +37,8 @@ import WorkoutsByLevelScreen from "../screens/WorkoutsByLevel";
 import PostsByTagScreen from "../screens/PostsByTag";
 import DietsByCategoryScreen from "../screens/DietsByCategory";
 import WorkoutDetailsScreen from "../screens/WorkoutDetails";
-import ExerciseDetailsScreen from "../screens/ExerciseDetails";
-import DietDetailsScreen from "../screens/DietDetails";
+// import ExerciseDetailsScreen from "../screens/ExerciseDetails";
+// import DietDetailsScreen from "../screens/DietDetails";
 import PostDetailsScreen from "../screens/PostDetails";
 import VideoExerciseScreen from "../screens/VideoExercise";
 import Day1Screen from "../screens/Day1";
@@ -161,21 +170,51 @@ const HomeNavigator = createStackNavigator(
 				gesturesEnabled: false
       }
     },
-
-
     
     EBodypartsScreen: {
-      screen: EBodypartsScreen
+      screen: EBodypartsScreen,
+      navigationOptions: {
+        header: null,
+				gesturesEnabled: false
+      }
     },
     EquipmentsScreen: {
-      screen: EquipmentsScreen
+      screen: EquipmentsScreen,
+      navigationOptions: {
+        header: null,
+				gesturesEnabled: false
+      }
     },
     ExercisesByMuscleScreen: {
-      screen: ExercisesByMuscleScreen
+      screen: ExercisesByMuscleScreen,
+      navigationOptions: {
+        header: null,
+				gesturesEnabled: false
+      }
     },
     ExercisesByEquipmentScreen: {
-      screen: ExercisesByEquipmentScreen
+      screen: ExercisesByEquipmentScreen,
+      navigationOptions: {
+        header: null,
+				gesturesEnabled: false
+      }
     },
+    ExerciseDetailsScreen: {
+      screen: ExerciseDetailsScreen,
+      navigationOptions: {
+        header: null,
+				gesturesEnabled: false
+      }
+    },
+    
+    DietDetailsScreen: {
+      screen: DietDetailsScreen,
+      navigationOptions: {
+        header: null,
+				gesturesEnabled: false
+      }
+    },
+
     WorkoutsByGoalScreen: {
       screen: WorkoutsByGoalScreen
     },
@@ -227,12 +266,8 @@ const HomeNavigator = createStackNavigator(
     VideoExerciseScreen: {
       screen: VideoExerciseScreen
     },
-    ExerciseDetailsScreen: {
-      screen: ExerciseDetailsScreen
-    },
-    DietDetailsScreen: {
-      screen: DietDetailsScreen
-    },
+
+
     PostDetailsScreen: {
       screen: PostDetailsScreen
     },

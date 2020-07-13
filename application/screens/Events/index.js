@@ -32,6 +32,7 @@ class Events extends React.Component {
             isSide: false,
             isEvent: false,
             selectedDate: Moment(new Date()).format("YYYY-MM-DD"),
+            // selectedDate: '2019-12-18',
             items: {
                 // '2019-12-07': [{text: 'item 1 - any js object'}],
                 // '2019-12-08': [{text: 'item 2 - any js object'}],
@@ -334,6 +335,7 @@ class Events extends React.Component {
                         minDate={Moment(new Date()).format("YYYY-MM-DD")}
                         // selected={"2019-12-15"}
                         // minDate={"2019-12-15"}
+                        // minDate={"2019-12-18"}
                         maxDate={'2030-12-31'}
                         // callback that fires when the calendar is opened or closed
                         // onCalendarToggled={(calendarOpened) => { console.log(calendarOpened) }} // true or false

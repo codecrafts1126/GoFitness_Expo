@@ -41,8 +41,7 @@ class Home extends React.Component {
                 "unique_id": this.props.user.unique_id
             },
             "event_list": {
-                "event_date": "2019-12-17"
-                // "event_date": Moment(new Date()).format("YYYY-MM-DD")
+                "event_date": Moment(new Date()).format("YYYY-MM-DD")
             }
         });
         if (eventsResponse.data.result == "success") {
