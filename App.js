@@ -1,18 +1,19 @@
 import React from 'react';
-
-import { Asset, Font } from 'expo-asset';
+import { Asset } from 'expo-asset';
 import { AppLoading } from 'expo';
 import { Root } from "native-base";
 import { StatusBar } from "react-native";
 
-import AppPreLoader from "./application/components/AppPreLoader";
+import { Provider } from 'react-redux';
+import { PersistGate } from 'redux-persist/integration/react';
+import { store, persistor } from './store';
+
+import LoginNavigation from './application/navigations/LoginStack';
+import OfflineBar from "./application/components/OfflineBar";
+
 import firebaseConfig from './application/utils/Firebase';
 import * as firebase from 'firebase';
 firebase.initializeApp(firebaseConfig);
-
-import GuestNavigation from './application/navigations/Guest';
-import LoggedNavigation from './application/navigations/Logged';
-import OfflineBar from "./application/components/OfflineBar";
 
 console.disableYellowBox = true;
 
@@ -27,110 +28,104 @@ function cacheImages(images) {
 }
 
 export default class App extends React.Component {
-	constructor () {
+  constructor() {
     super();
-		this.state = {
-			isLogged: false,
-			loaded: false,
-			isReady: false,
+    this.state = {
+      isReady: false,
     }
-	}
-
-async _loadAssetsAsync() {
-    const imageAssets = cacheImages([
-      require('./assets/images/bg.jpg'),
-      require('./assets/images/goals.jpg'),
-      require('./assets/images/levels.jpg'),
-      require('./assets/images/header.jpg'),
-      require('./assets/images/bodyparts.jpg'),
-      require('./assets/images/equipments.jpg'),
-      require('./assets/images/logo.png'),
-      require('./assets/images/logo_dark.png'),
-      require('./assets/images/workouts.png'),
-      require('./assets/images/exercises.png'),
-      require('./assets/images/calculator.png'),
-      require('./assets/images/diets.png'),
-      require('./assets/images/store.png'),
-      require('./assets/images/chrono.png'),
-      require('./assets/images/sets.png'),
-      require('./assets/images/reps.png'),
-      require('./assets/images/star.png'),
-      require('./assets/images/avatar.png'),
-      require('./assets/images/bookmarked.png'),
-      require('./assets/images/emptylist.png'),
-      require('./assets/images/avatar.jpg'),
-      require('./assets/images/profilebg.jpg'),
-      require('./assets/images/restday.png'),
-      require('./assets/images/blog.png'),
-      require('./assets/images/quotes.png'),
-      require('./assets/images/checked.png'),
-      require('./assets/images/nointernet.png'),
-      require('./assets/images/contact.png'),
-    ]);
-
-    await Promise.all([...imageAssets]);
   }
 
-  async componentDidMount () {
+  async _loadassetsAsync() {
+    const imageassets = cacheImages([
 
+      // require('react-native-dropdownalert/assets/cancel.png'),
+      // require('react-native-dropdownalert/assets/error.png'),
+      // require('react-native-dropdownalert/assets/info.png'),
+      // require('react-native-dropdownalert/assets/success.png'),
+      // require('react-native-dropdownalert/assets/warn.png'),
+
+      require('@images/logo.png'),
+      require('@images/welcome.png'),
+      require('@images/splash1.png'),
+      require('@images/splash2.png'),
+      require('@images/splash3.png'),
+      require('@images/slide01.png'),
+      require('@images/slide03.png'),
+      require('@images/slide04.png'),
+      require('@images/slide06.png'),
+      require('@images/slide07.png'),
+      require('@images/slide08.png'),
+      require('@images/slide09.png'),
+      require('@images/slide10.png'),
+      require('@images/slide17.png'),
+      require('@images/slide27.png'),
+      require('@images/slider/slide81.png'),
+
+      require('@images/bg_dark.jpg'),
+      require('@images/bg_light.jpg'),
+      require('@images/goals.jpg'),
+      require('@images/levels.jpg'),
+      require('@images/header.jpg'),
+      require('@images/bodyparts.jpg'),
+      require('@images/equipments.jpg'),
+      require('@images/logo.png'),
+      require('@images/logo_dark.png'),
+      require('@images/workouts.png'),
+      require('@images/exercises.png'),
+      require('@images/calculator.png'),
+      require('@images/diets.png'),
+      require('@images/store.png'),
+      require('@images/chrono.png'),
+      require('@images/sets.png'),
+      require('@images/reps.png'),
+      require('@images/star.png'),
+      require('@images/avatar.png'),
+      require('@images/bookmarked.png'),
+      require('@images/emptylist.png'),
+      require('@images/avatar.jpg'),
+      require('@images/profilebg.jpg'),
+      require('@images/restday.png'),
+      require('@images/blog.png'),
+      require('@images/quotes.png'),
+      require('@images/checked.png'),
+      require('@images/nointernet.png'),
+      require('@images/contact.png'),
+      require('@images/profile.png'),
+      require('@images/settings.png'),
+      require('@images/signout.png'),
+    ]);
+
+    await Promise.all([...imageassets]);
+  }
+
+  async componentDidMount() {
     await Expo.Font.loadAsync({
       Roboto_medium: require("native-base/Fonts/Roboto_medium.ttf")
     });
-
-		await firebase.auth().onAuthStateChanged((user) => {
-			if(user !== null) {
-				this.setState({
-					isLogged: true,
-					loaded: true
-				});
-			} else {
-				this.setState({
-					isLogged: false,
-					loaded: true
-				});
-			}
-    });
-    
   }
-  
-	render() {
 
-		if (!this.state.isReady) {
-
+  render() {
+    if (!this.state.isReady) {
       return (
         <AppLoading
-          startAsync={this._loadAssetsAsync}
+          startAsync={this._loadassetsAsync}
           onFinish={() => this.setState({ isReady: true })}
           onError={console.warn}
         />
       );
     }
 
-		const {isLogged, loaded, isReady} = this.state;
-
-		if ( ! loaded) {
-			return (
-        <AppPreLoader/>
-        );
-		}
-
-		if(isLogged && isReady) {
-			return (
-        <Root>
-        <OfflineBar/>
+    return (
+      <Root>
+        <OfflineBar />
         <StatusBar barStyle="light-content" backgroundColor="#ce8512" />
-        <LoggedNavigation />
-        </Root>
-        );
-		} else {
-			return (
-        <Root>
-        <StatusBar hidden />
-        <GuestNavigation />
-        </Root>
-        );
-		}
-	}
+        <Provider store={store}>
+          <PersistGate loading={null} persistor={persistor}>
+            <LoginNavigation />
+          </PersistGate>
+        </Provider>
+      </Root>
+    );
+  }
 }
-
 

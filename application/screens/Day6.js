@@ -6,12 +6,12 @@ import { LinearGradient } from 'expo-linear-gradient';
 import {Grid, Row, Col } from 'react-native-easy-grid';
 import { Container, Text, Body, Right, List, ListView, Thumbnail, ListItem} from 'native-base';
 import Strings from '../utils/Strings';
-import ConfigApp from '../utils/ConfigApp';
+import configs from '../utils/configs';
 import BannerAd from '../components/BannerAd';
 import RestDay from '../components/RestDay';
 
 
-var styles = require('../../assets/files/Styles');
+var styles = require('@utils/styles');
 var {height, width} = Dimensions.get('window');
 
 export default class Day6 extends Component {
@@ -28,7 +28,7 @@ export default class Day6 extends Component {
 
   componentDidMount() {  
     
-       return fetch(ConfigApp.URL+'json/data_day6.php?workout='+this.props.navigation.state.params.WorkoutId)
+       return fetch(configs.baseURL+'json/data_day6.php?workout='+this.props.navigation.state.params.WorkoutId)
          .then((response) => response.json())
          .then((responseJson) => {
            this.setState({
@@ -84,7 +84,7 @@ export default class Day6 extends Component {
           renderItem={({item}) =>
                 
             <ListItem style={{paddingLeft: 0, marginLeft: 0, backgroundColor:'#FFF', opacity: 1, borderColor: 'rgba(0,0,0,0.05)', borderBottomWidth: 1}}  onPress={() => this.ExerciseDetails(item)} >
-              <Thumbnail square size={80} source={{ uri: ConfigApp.URL+'images/'+item.exercise_image }} style={{paddingLeft: 10, marginLeft: 10}} />
+              <Thumbnail square size={80} source={{ uri: configs.baseURL+'images/'+item.exercise_image }} style={{paddingLeft: 10, marginLeft: 10}} />
               <Body style={{paddingLeft: 0, marginLeft: 0}}>
                 <Text numberOfLines={1} style={{fontSize: 14, marginBottom: 3}}>
                 {item.exercise_title}

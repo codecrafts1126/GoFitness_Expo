@@ -6,10 +6,10 @@ import Icon from 'react-native-vector-icons/SimpleLineIcons';
 import {Grid, Row } from 'react-native-easy-grid';
 import { Container, Text} from 'native-base';
 
-import ConfigApp from '../utils/ConfigApp';
+import configs from '../utils/configs';
 import Strings from '../utils/Strings';
 
-var styles = require('../../assets/files/Styles');
+var styles = require('@utils/styles');
 var {height, width} = Dimensions.get('window');
 
 export default class Exercises extends Component {
@@ -32,7 +32,7 @@ static navigationOptions = {
     <Grid>
 
 <Row onPress={this.navigateToScreen('EBodypartsScreen')} activeOpacity={1}>
-<ImageBackground source={require('../../assets/images/bodyparts.jpg')} style={styles.card_general}>
+<ImageBackground source={require('@assets/images/bodyparts.jpg')} style={styles.card_general}>
 <LinearGradient colors={['rgba(0,0,0,0.6)', 'rgba(0,0,0,0.9)']} style={styles.gradient_general}>                        
 		<Text style={styles.title_general}>{Strings.ST37}</Text>
 		<Text style={styles.subtitle_general}>{Strings.ST40}</Text>
@@ -42,7 +42,7 @@ static navigationOptions = {
 
 <Row onPress={this.navigateToScreen('EquipmentsScreen')} activeOpacity={1}>
 
-<ImageBackground source={require('../../assets/images/equipments.jpg')} style={styles.card_general}>
+<ImageBackground source={require('@assets/images/equipments.jpg')} style={styles.card_general}>
 <LinearGradient colors={['rgba(0,0,0,0.6)', 'rgba(0,0,0,0.9)']} style={styles.gradient_general}>                        
     <Text style={styles.title_general}>{Strings.ST38}</Text>
     <Text style={styles.subtitle_general}>{Strings.ST39}</Text>

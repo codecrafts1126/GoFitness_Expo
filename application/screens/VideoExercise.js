@@ -6,9 +6,9 @@ import { Video } from 'expo-av';
 import { LinearGradient } from 'expo-linear-gradient';
 import {Grid, Row, Col } from 'react-native-easy-grid';
 import { Container, Content, Footer, FooterTab, Body, Text, List, Right, Button, ListItem} from 'native-base';
-import ConfigApp from '../utils/ConfigApp';
+import configs from '../utils/configs';
 
-var styles = require('../../assets/files/Styles');
+var styles = require('@utils/styles');
 var {height, width} = Dimensions.get('window');
 
 export default class ExerciseDetails extends Component {
@@ -82,7 +82,7 @@ return (
 <Row>
 
 <Col style={styles.col_exercise}>
-<Image source={require('../../assets/images/done.png')} resizeMode="contain" style={styles.icon_videoexercise} />
+<Image source={require('@assets/images/done.png')} resizeMode="contain" style={styles.icon_videoexercise} />
 <Text style={styles.titlecol_exercise}>Done</Text>
 </Col>
 
@@ -98,12 +98,12 @@ justifyContent: 'center'}}>
 <Col style={styles.col_exercise}>
 {this.state.shouldPlay ? (
   <TouchableOpacity style={{alignItems: 'center', justifyContent: 'center'}} activeOpacity={1} onPress={this.handlePlayAndPause}>
- <Image source={require("../../assets/images/pause.png")} resizeMode="contain" style={styles.icon_videoexercise} />
+ <Image source={require("@assets/images/pause.png")} resizeMode="contain" style={styles.icon_videoexercise} />
  <Text style={styles.titlecol_exercise}>Pause</Text>
   </TouchableOpacity>
   ) : (
   <TouchableOpacity style={{alignItems: 'center', justifyContent: 'center'}} activeOpacity={1} onPress={this.startTimer}> 
-  <Image source={require('../../assets/images/play.png')} resizeMode="contain" style={styles.icon_videoexercise} />
+  <Image source={require('@assets/images/play.png')} resizeMode="contain" style={styles.icon_videoexercise} />
   <Text style={styles.titlecol_exercise}>Play</Text>
   </TouchableOpacity>
   )}

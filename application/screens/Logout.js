@@ -1,15 +1,9 @@
 import React, {Component} from 'react';
-import * as firebase from 'firebase';
+import { AsyncStorage } from 'react-native';
 
 export default class Logout extends Component {
-	componentDidMount () {
-		firebase.auth().signOut()
-			.then(() => {
-				
-			})
-			.catch(error => {
-				
-			})
+	async componentDidMount () {
+		await AsyncStorage.setItem('LOGIN_TOKEN', "false")
 	}
 
 	render () {

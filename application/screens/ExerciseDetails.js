@@ -5,13 +5,13 @@ import { Video } from 'expo-av';
 import { LinearGradient } from 'expo-linear-gradient';
 import {Grid, Row, Col } from 'react-native-easy-grid';
 import { Container, Content, Footer, FooterTab, Body, Text, List, Right, Button, ListItem} from 'native-base';
-import ConfigApp from '../utils/ConfigApp';
+import configs from '../utils/configs';
 import Strings from '../utils/Strings';
 import BannerAd from '../components/BannerAd';
 import { NavigationActions } from 'react-navigation';
 
 
-var styles = require('../../assets/files/Styles');
+var styles = require('@utils/styles');
 var {height, width} = Dimensions.get('window');
 
 export default class ExerciseDetails extends Component {
@@ -37,7 +37,7 @@ static navigationOptions = {
 
   componentDidMount() {
     
-       return fetch(ConfigApp.URL+'json/data_bodypart.php?exercise='+this.props.navigation.state.params.item.exercise_id)
+       return fetch(configs.baseURL+'json/data_bodypart.php?exercise='+this.props.navigation.state.params.item.exercise_id)
          .then((response) => response.json())
          .then((responseJson) => {
            this.setState({
@@ -70,7 +70,7 @@ return (
 <Text style={{color: 'rgba(0,0,0,0.3)'}}>{item.exercise_title}</Text>
 </View>
 
-<Video usePoster={true} source={{ uri: item.exercise_video }} posterSource={{ uri: ConfigApp.URL+'images/'+item.exercise_image }} shouldPlay={this.state.shouldPlay} resizeMode="contain" style={{ width, height: height * 0.30, borderWidth: 1, borderColor: '#FFF', borderBottomWidth: 0, borderTopWidth: 0, borderLeftWidth: 0, borderRightWidth: 0}}
+<Video usePoster={true} source={{ uri: item.exercise_video }} posterSource={{ uri: configs.baseURL+'images/'+item.exercise_image }} shouldPlay={this.state.shouldPlay} resizeMode="contain" style={{ width, height: height * 0.30, borderWidth: 1, borderColor: '#FFF', borderBottomWidth: 0, borderTopWidth: 0, borderLeftWidth: 0, borderRightWidth: 0}}
     isMuted={this.state.mute}
   />
 
@@ -78,19 +78,19 @@ return (
 <Row style={{height: 110}}>
 
 <Col style={styles.col_exercise}>
-<Image source={require('../../assets/images/sets.png')} resizeMode="contain" style={styles.icon_exercise} />
+<Image source={require('@assets/images/sets.png')} resizeMode="contain" style={styles.icon_exercise} />
 <Text style={styles.titlecol_exercise}>{Strings.ST97}</Text>
 <Text>{item.exercise_sets}</Text>
 </Col>
 
 <Col style={styles.col_exercise}> 
-<Image source={require('../../assets/images/reps.png')} resizeMode="contain" style={styles.icon_exercise} />
+<Image source={require('@assets/images/reps.png')} resizeMode="contain" style={styles.icon_exercise} />
 <Text style={styles.titlecol_exercise}>{Strings.ST98}</Text>
 <Text>{item.exercise_reps}</Text>
 </Col>
 
 <Col style={styles.col_exercise}>
-<Image source={require('../../assets/images/chrono.png')} resizeMode="contain" style={styles.icon_exercise} />
+<Image source={require('@assets/images/chrono.png')} resizeMode="contain" style={styles.icon_exercise} />
 <Text style={styles.titlecol_exercise}>{Strings.ST99}</Text>
 <Text>{item.exercise_rest}</Text>
 </Col>

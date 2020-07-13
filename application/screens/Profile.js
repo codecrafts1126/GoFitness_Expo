@@ -5,7 +5,7 @@ import{ ImageBackground, AsyncStorage, TouchableOpacity, Dimensions, View, Image
 import Icon from 'react-native-vector-icons/SimpleLineIcons';
 import { Container, Content, Body, Thumbnail,Text, List, Right,Left, Button, ListItem, Tab, Tabs} from 'native-base';
 import { LinearGradient } from 'expo-linear-gradient';
-import ConfigApp from '../utils/ConfigApp';
+import configs from '../utils/configs';
 import TimeAgo from 'react-native-timeago';
 import PostFav from '../components/PostFav';
 import DietFav from '../components/DietFav';
@@ -13,7 +13,7 @@ import WorkoutFav from '../components/WorkoutFav';
 import Strings from '../utils/Strings';
 
 
-var styles = require('../../assets/files/Styles');
+var styles = require('@utils/styles');
 var {height, width} = Dimensions.get('window');
 
 export default class Profile extends Component {
@@ -49,7 +49,7 @@ constructor(props) {
     return (
 
 <Container style={styles.background_general}>
-<ImageBackground source={require('../../assets/images/profilebg.jpg')} style={{width: width, height: height * 0.20, alignItems: 'center', justifyContent: 'center',}}>
+<ImageBackground source={require('@assets/images/profilebg.jpg')} style={{width: width, height: height * 0.20, alignItems: 'center', justifyContent: 'center',}}>
     <Text style={{color: '#4284d5', fontSize: 22, marginTop: 6}}>{displayName}</Text>
     <Text style={{color: '#FFF', fontSize: 16, marginTop: 6, textTransform: 'uppercase'}}> {Strings.ST65} <TimeAgo time={creationTime} hideAgo={true}/></Text>
 </ImageBackground>

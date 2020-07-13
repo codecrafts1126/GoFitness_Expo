@@ -6,14 +6,14 @@ import { LinearGradient } from 'expo-linear-gradient';
 import {Grid, Row, Col } from 'react-native-easy-grid';
 import { Container, Content, Body, Text, List, Right, ListItem, Tab, Tabs} from 'native-base';
 import * as firebase from 'firebase';
-import ConfigApp from '../utils/ConfigApp';
+import configs from '../utils/configs';
 import BannerAd from '../components/BannerAd';
 import HTML from 'react-native-render-html';
 import Strings from '../utils/Strings';
 import ToastModal from '../components/ToastModal';
 import Toast from 'react-native-root-toast';
 
-var styles = require('../../assets/files/Styles');
+var styles = require('@utils/styles');
 var {height, width} = Dimensions.get('window');
 
 export default class DietDetails extends Component {
@@ -70,7 +70,7 @@ saveDiets = async (diet_id, diet_title, diet_image, diet_servings, diet_time, di
 
     return (
 <Container style={styles.background_general}>
-<ImageBackground source={{uri: ConfigApp.URL+'images/'+item.diet_image}} style={styles.background_diets_col}>
+<ImageBackground source={{uri: configs.baseURL+'images/'+item.diet_image}} style={styles.background_diets_col}>
 
 <TouchableOpacity activeOpacity={1} style={styles.touchBookmarkTran} onPress={this.saveDiets.bind(this, item.diet_id, item.diet_title, item.diet_image, item.diet_servings, item.diet_time, item.diet_calories, item.diet_protein, item.diet_fat, item.diet_carbs, item.diet_ingredients, item.diet_directions, item.diet_description, user.uid)}>
 <Ionicons name="md-star" size={25} color="white"/>

@@ -1,10 +1,9 @@
 {
+  "packagerPort": 19001,
+  "packagerPid": 63360,
   "devToolsPort": 19002,
   "expoServerPort": 19000,
-  "packagerPort": 19001,
-  "packagerPid": 72069,
-  "expoServerNgrokUrl": "https://eb-va5.rabiaa.fitness.exp.direct",
-  "packagerNgrokUrl": "https://packager.eb-va5.rabiaa.fitness.exp.direct",
-  "ngrokPid": 72083,
-  "webpackServerPort": null
+  "expoServerNgrokUrl": "https://d7-yyy.anonymous.athena.exp.direct",
+  "packagerNgrokUrl": "https://packager.d7-yyy.anonymous.athena.exp.direct",
+  "ngrokPid": 62192
 }

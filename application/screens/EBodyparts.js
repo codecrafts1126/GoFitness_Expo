@@ -6,10 +6,10 @@ import { LinearGradient } from 'expo-linear-gradient';
 import {Grid, Row } from 'react-native-easy-grid';
 import { Container, Text} from 'native-base';
 
-import ConfigApp from '../utils/ConfigApp';
+import configs from '../utils/configs';
 import Strings from '../utils/Strings';
 
-var styles = require('../../assets/files/Styles');
+var styles = require('@utils/styles');
 var {height, width} = Dimensions.get('window');
 
 export default class EBodyparts extends Component {
@@ -26,7 +26,7 @@ export default class EBodyparts extends Component {
 
   componentDidMount() {
     
-       return fetch(ConfigApp.URL+'json/data_bodyparts.php')
+       return fetch(configs.baseURL+'json/data_bodyparts.php')
          .then((response) => response.json())
          .then((responseJson) => {
            this.setState({
@@ -63,7 +63,7 @@ ListExercisesByMuscle=(bodypart_id, bodypart_title)=>
           numColumns={2}
           renderItem={({item}) => 
                 <TouchableOpacity onPress={this.ListExercisesByMuscle.bind(this, item.bodypart_id, item.bodypart_title)} activeOpacity={1} style={{flex: 1}}>
-                <ImageBackground source={{uri: ConfigApp.URL+'images/'+item.bodypart_image}} style={styles.background_2columns}>
+                <ImageBackground source={{uri: configs.baseURL+'images/'+item.bodypart_image}} style={styles.background_2columns}>
                     <LinearGradient colors={['rgba(0,0,0,0.6)', 'rgba(0,0,0,0.6)']} style={styles.gradient_2columns}>
                     <View style={styles.title_categories_border}></View>
                     <LinearGradient colors={['rgba(0,0,0,0.6)', 'rgba(0,0,0,0.6)']} style={styles.title_2columns_background}>

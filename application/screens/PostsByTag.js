@@ -7,12 +7,12 @@ import { LinearGradient } from 'expo-linear-gradient';
 import {Grid, Row } from 'react-native-easy-grid';
 import { Container, Text, Body, Right, List, ListView, Thumbnail, ListItem} from 'native-base';
 
-import ConfigApp from '../utils/ConfigApp';
+import configs from '../utils/configs';
 
 import BannerAd from '../components/BannerAd';
 
 
-var styles = require('../../assets/files/Styles');
+var styles = require('@utils/styles');
 var {height, width} = Dimensions.get('window');
 
 export default class PostsByTag extends Component {
@@ -29,7 +29,7 @@ export default class PostsByTag extends Component {
 
   componentDidMount() {
     
-       return fetch(ConfigApp.URL+'json/data_posts.php?tag='+this.props.navigation.state.params.IdTag)
+       return fetch(configs.baseURL+'json/data_posts.php?tag='+this.props.navigation.state.params.IdTag)
          .then((response) => response.json())
          .then((responseJson) => {
            this.setState({
@@ -73,7 +73,7 @@ export default class PostsByTag extends Component {
           renderItem={({item, index}) => 
                 <TouchableOpacity onPress={() => this.PostDetails(item)} activeOpacity={1} style={{flex: 1}}>
                 <View style={{margin: 5, marginLeft: 4}}>
-                <ImageBackground source={{uri: ConfigApp.URL+'images/'+item.post_image}} style={styles.background_posts_2columns}>
+                <ImageBackground source={{uri: configs.baseURL+'images/'+item.post_image}} style={styles.background_posts_2columns}>
                     <LinearGradient colors={['rgba(0,0,0,0.3)', 'rgba(0,0,0,0.8)']} style={styles.gradient_posts_2columns}>
                             <Text numberOfLines={1} style={styles.date_posts}>{item.post_date}</Text>
                             <Text numberOfLines={1} style={styles.title_posts_categories}>{item.post_title}</Text>
