@@ -9,7 +9,7 @@ import PostForm from '../forms/PostForm';
 import PostComments from '../forms/PostComments';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import * as firebase from 'firebase';
-import ConfigApp from '../utils/ConfigApp';
+import configs from '../utils/configs';
 import Strings from '../utils/Strings';
 import BannerAd from '../components/BannerAd';
 import HTML from 'react-native-render-html';
@@ -17,7 +17,7 @@ import HTML from 'react-native-render-html';
 import ToastModal from '../components/ToastModal';
 import Toast from 'react-native-root-toast';
 
-var styles = require('../../assets/files/Styles');
+var styles = require('@utils/styles');
 var {height, width} = Dimensions.get('window');
 
 export default class PostDetails extends Component {
@@ -72,10 +72,10 @@ savePosts = async (post_id, post_title, post_image, post_date, tag_title, post_d
 <ScrollView>
 <KeyboardAwareScrollView>
 
-<ImageBackground source={{uri: ConfigApp.URL+'images/'+item.post_image}} style={styles.postDetail_background}>
+<ImageBackground source={{uri: configs.baseURL+'images/'+item.post_image}} style={styles.postDetail_background}>
 <LinearGradient colors={['rgba(0,0,0,0.0)', 'rgba(0,0,0,0.9)']} style={styles.postDetail_gradient}/>
 <TouchableOpacity activeOpacity={1} style={{backgroundColor: '#4284d5', width: 50, height: 50, position: 'absolute', right: 15, bottom: -25, borderRadius: 50 , alignItems: 'center', justifyContent: 'center'}} onPress={this.savePosts.bind(this, item.post_id, item.post_title, item.post_image, item.post_date, item.tag_title, item.post_description, user.uid)}>
-<Image source={require('../../assets/images/bookmarked.png')} style={{width: 25, height: 25}}/>
+<Image source={require('@assets/images/bookmarked.png')} style={{width: 25, height: 25}}/>
 </TouchableOpacity>
 </ImageBackground>
 

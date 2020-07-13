@@ -1,24 +1,22 @@
 import { StyleSheet } from "react-native";
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 
+import colors from "@constants/colors";
+
 export default StyleSheet.create({
     container: {
         flexDirection: 'column',
         justifyContent: 'space-between',
         alignItems: 'flex-start',
-        // width: wp('90.0%'),
     },
     textField: {
-        // flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
         width: '100%',
-        top: -15,
+        // top: -13,
     },
     textInput: {
-        // paddingVertical: hp('1.0%'),
-        // fontSize: hp('2.25%'),
-        color: '#444',
+        color: colors.middle_gray,
         borderBottomWidth: 1,
     }
 });

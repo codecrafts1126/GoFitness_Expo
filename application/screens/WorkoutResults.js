@@ -9,10 +9,10 @@ import { Container, Text, Body, Right, List, ListView, Thumbnail, ListItem, Butt
 import BannerAd from '../components/BannerAd';
 
 
-import ConfigApp from '../utils/ConfigApp';
+import configs from '../utils/configs';
 import Strings from '../utils/Strings';
 
-var styles = require('../../assets/files/Styles');
+var styles = require('@utils/styles');
 var {height, width} = Dimensions.get('window');
 
 export default class WorkoutResults extends Component {
@@ -29,7 +29,7 @@ export default class WorkoutResults extends Component {
 
   componentDidMount() {
     
-       return fetch(ConfigApp.URL+'json/data_workout_search.php?goal='+this.props.navigation.state.params.goalID+'&level='+this.props.navigation.state.params.levelID+'&duration='+this.props.navigation.state.params.durationID)
+       return fetch(configs.baseURL+'json/data_workout_search.php?goal='+this.props.navigation.state.params.goalID+'&level='+this.props.navigation.state.params.levelID+'&duration='+this.props.navigation.state.params.durationID)
          .then((response) => response.json())
          .then((responseJson) => {
            this.setState({
@@ -86,7 +86,7 @@ export default class WorkoutResults extends Component {
           refreshing="false"
           renderItem={({item}) => 
                 <TouchableOpacity onPress={() => this.WorkoutDetails(item)} activeOpacity={1}>
-                <ImageBackground source={{uri: ConfigApp.URL+'images/'+item.workout_image}} style={styles.background_card}>
+                <ImageBackground source={{uri: configs.baseURL+'images/'+item.workout_image}} style={styles.background_card}>
                     <LinearGradient colors={['rgba(0,0,0,0.6)', 'rgba(0,0,0,0.9)']} style={styles.gradient_card}>
                             <Text style={styles.category_card}>{item.goal_title}</Text>
                             <Text style={styles.title_card}>{item.workout_title}</Text>

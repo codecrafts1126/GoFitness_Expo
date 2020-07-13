@@ -5,11 +5,11 @@ import { TouchableOpacity, Dimensions, View, Image, ScrollView, Linking } from '
 import { Grid, Row, Col } from 'react-native-easy-grid';
 import Icon from 'react-native-vector-icons/Entypo';
 import { Container, Text, List, ListItem, Left, Right, Body } from 'native-base';
-import ConfigApp from '../utils/ConfigApp';
+import configs from '../utils/configs';
 import Strings from '../utils/Strings';
 import { strings } from '../utils/i18n';
 
-var styles = require('../../assets/files/Styles');
+var styles = require('@utils/styles');
 var { height, width } = Dimensions.get('window');
 
 export default class Settings extends Component {
@@ -38,7 +38,7 @@ export default class Settings extends Component {
           <Grid>
             <Row style={{ flexDirection: 'column', justifyContent: 'center', alignItems: 'center', backgroundColor: '#FFF', height: height * 0.30, padding: 30, paddingBottom: 0 }}>
               <Image
-                source={require('../../assets/images/logo_dark.png')}
+                source={require('@assets/images/logo_dark.png')}
                 style={{ flex: 1, width: 130, height: 130 }}
                 resizeMode='contain' />
             </Row>

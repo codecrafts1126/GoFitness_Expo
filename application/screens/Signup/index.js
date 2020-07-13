@@ -1,7 +1,7 @@
 import React from 'react';
 import { I18nManager, Image, TouchableOpacity } from 'react-native';
 import { Container, Header, Body, Left, Text, Title, Right, View } from 'native-base';
-import { NavigationActions } from 'react-navigation';
+import { StackActions, NavigationActions } from 'react-navigation';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -10,14 +10,16 @@ import DropdownAlert from 'react-native-dropdownalert';
 import DatePicker from 'react-native-datepicker';
 import moment from 'moment';
 
+import { connect } from 'react-redux';
+import { signupSuccess } from '@modules/account/actions';
+import { AthenaButton, AthenaTextInput, AthenaDropdown } from "@components";
+import global from '@constants/styles';
 import styles from "./styles";
 import strings from '@constants/strings';
 import colors from "@constants/colors";
 import images from '@constants/images';
-import { AthenaButton, AthenaTextInput, AthenaDatepicker } from "@components";
 import i18n from "@utils/i18n";
 import API from '@utils/API';
-import AthenaDropdown from '../../components/AthenaDropdown';
 
 class Signup extends React.Component {
     static navigationOptions = {
@@ -56,7 +58,16 @@ class Signup extends React.Component {
                     }
                 })
                 if (signupResult.data.result == "success") {
-                    this.dropDownAlertRef.alertWithType('success', `${i18n.translate(strings.ST316)}`, `${i18n.translate(strings.ST332)}`);
+                    this.props.signupSuccess(true);
+                    const resetAction = StackActions.reset({
+                        index: 2,
+                        actions: [
+                            NavigationActions.navigate({ routeName: 'Welcome' }),
+                            NavigationActions.navigate({ routeName: 'Splash' }),
+                            NavigationActions.navigate({ routeName: 'Signin' })
+                        ]
+                    });
+                    this.props.navigation.dispatch(resetAction);
                 } else if (signupResult.data.result == "failure") {
                     this.dropDownAlertRef.alertWithType('error', `${i18n.translate(strings.ST314)}`, `${i18n.translate(strings.ST333)}`);
                 }
@@ -105,23 +116,27 @@ class Signup extends React.Component {
     }
 
     render() {
-        const isRTL = i18n.isRTL();
+        const { isRTL } = this.props;
         let sex = [{ value: 1, label: 'Male' }, { value: 2, label: 'Female' }]
         return (
             <Container style={styles.container}>
                 <Header style={styles.header}>
                     <Left style={{ flex: 1 }}>
-                        {!isRTL ? <TouchableOpacity style={[styles.back, { marginLeft: 10 }]} onPress={() => this.props.navigation.goBack()}>
-                            <Ionicons name='md-arrow-round-back' style={{ transform: [{ scaleX: 1 }], fontSize: 22 }} />
-                        </TouchableOpacity> : <View />}
+                        {!isRTL ?
+                            <TouchableOpacity style={[styles.back, { marginLeft: 10 }]} onPress={() => this.props.navigation.goBack()}>
+                                <Ionicons name='md-arrow-round-back' style={{ transform: [{ scaleX: 1 }], fontSize: 22 }} />
+                            </TouchableOpacity> : <View />
+                        }
                     </Left>
                     <Body style={{ flex: 4, justifyContent: 'center', alignItems: 'center' }}>
                         <Title style={{ color: colors.black }}>{i18n.translate(strings.ST302)}</Title>
                     </Body>
                     <Right style={{ flex: 1 }} >
-                        {isRTL ? <TouchableOpacity style={[styles.back, { marginRight: -25 }]} onPress={() => this.props.navigation.goBack()}>
-                            <Ionicons name='md-arrow-round-back' style={{ transform: [{ scaleX: -1 }], fontSize: 22 }} />
-                        </TouchableOpacity> : <View />}
+                        {isRTL ?
+                            <TouchableOpacity style={[styles.back, { marginRight: -25 }]} onPress={() => this.props.navigation.goBack()}>
+                                <Ionicons name='md-arrow-round-back' style={{ transform: [{ scaleX: -1 }], fontSize: 22 }} />
+                            </TouchableOpacity> : <View />
+                        }
                     </Right>
                 </Header>
                 <Body>
@@ -149,9 +164,10 @@ class Signup extends React.Component {
                                 value={this.state.email}
                                 placeholder={i18n.translate(strings.ST323)}
                                 keyboardType={"email-address"}
+                                autoCapitalize={"none"}
                                 width={wp('80.0%')}
                                 onChangeText={email => this.setState({ email })} />
-                            <View style={[!isRTL ? { flexDirection: 'row' } : { flexDirection: 'row-reverse' }, { justifyContent: 'space-between', alignItems: 'center', width: wp('80.0%'), top: -15 }]}>
+                            <View style={[!isRTL ? { flexDirection: 'row' } : { flexDirection: 'row-reverse' }, { justifyContent: 'space-between', alignItems: 'center', width: wp('80.0%') }]}>
                                 <AthenaTextInput
                                     isRTL={isRTL}
                                     value={this.state.phonenumber}
@@ -165,29 +181,31 @@ class Signup extends React.Component {
                                     value={this.state.gender}
                                     data={sex}
                                     width={wp('25.0%')}
-                                    onChangeText={gender => this.setState({ gender })} />
+                                    onChangeText={(value) => this.setState({ gender: value })} />
                             </View>
-                            <View style={[!isRTL ? { flexDirection: 'row', justifyContent: 'flex-start' } : { flexDirection: 'row-reverse', justifyContent: 'flex-start' }, { alignItems: 'center', width: wp('80.0%'), height: 80, top: -30 }]}>
+                            <View style={[!isRTL ? { flexDirection: 'row', justifyContent: 'flex-start' } : { flexDirection: 'row-reverse', justifyContent: 'flex-start' }, { alignItems: 'center', width: wp('80.0%'), height: 80 }]}>
                                 <View style={{ flexDirection: 'column' }}>
-                                    <Text style={[!isRTL ? { textAlign: 'left' } : { textAlign: 'right' }, this.state.birthday == "" ? { fontSize: 16, color: colors.light_gray } : { fontSize: 14, color: colors.blue }]}>{i18n.translate(strings.ST325)}</Text>
+                                    <Text style={[!isRTL ? { textAlign: 'left' } : { textAlign: 'right' }, this.state.birthday == "" ? { fontSize: 16, color: colors.middle_gray } : { fontSize: 14, color: colors.textfield_highlight }]}>{i18n.translate(strings.ST325)}</Text>
+                                    <View style={isRTL ? {marginRight: 10} : {}}>
                                     <DatePicker
                                         isRTL={isRTL}
                                         style={{ width: 90, marginTop: 10 }}
                                         date={this.state.birthday}
-                                        mode="date" 
+                                        mode="date"
                                         placeholder={moment().format("YYYY-MM-DD")}
                                         confirmBtnText="Confirm" cancelBtnText="Cancel"
                                         minDate="1820-01-01" maxDate={moment().format("YYYY-MM-DD")}
                                         onDateChange={(date) => { this.setState({ birthday: date }) }}
                                     />
+                                    </View>
                                 </View>
                             </View>
                             <AthenaButton
                                 isRTL={isRTL}
                                 isDisabled={this.state.isDisabled}
                                 title={i18n.translate(strings.ST307)}
-                                color={colors.button_back}
-                                fontColor={colors.button_font}
+                                color={colors.primary}
+                                fontColor={colors.white}
                                 width={wp('80.0%')}
                                 height={40}
                                 onPress={this.register.bind(this)} />
@@ -199,10 +217,27 @@ class Signup extends React.Component {
                         </View>
                     </KeyboardAwareScrollView>
                 </Body>
-                <DropdownAlert ref={ref => this.dropDownAlertRef = ref} />
+                <DropdownAlert ref={ref => this.dropDownAlertRef = ref}
+                    isRTL={isRTL}
+                    contentContainerStyle={{ flex: 1, flexDirection: isRTL ? 'row-reverse' : 'row' }} />
             </Container>
         )
     }
 }
 
-export default Signup;
+const mapStateToProps = state => {
+    return {
+        signup: state.account.signup,
+        isRTL: state.account.isRTL,
+    }
+}
+
+const mapDispatchToProps = dispatch => {
+    return {
+        signupSuccess: (data) => {
+            dispatch(signupSuccess(data))
+        }
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Signup);

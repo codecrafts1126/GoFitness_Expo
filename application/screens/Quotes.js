@@ -9,11 +9,11 @@ import * as firebase from 'firebase';
 import BannerAd from '../components/BannerAd';
 import QuotesFav from '../components/QuotesFav';
 import Strings from '../utils/Strings';
-import ConfigApp from '../utils/ConfigApp';
+import configs from '../utils/configs';
 import ToastModal from '../components/ToastModal';
 import Toast from 'react-native-root-toast';
 
-var styles = require('../../assets/files/Styles');
+var styles = require('@utils/styles');
 var {height, width} = Dimensions.get('window');
 
 export default class Quotes extends Component {
@@ -32,7 +32,7 @@ export default class Quotes extends Component {
   }
 
 componentDidMount() {
-   return fetch(ConfigApp.URL+'json/data_quotes.php')
+   return fetch(configs.baseURL+'json/data_quotes.php')
    .then((response) => response.json())
    .then((responseJson) => {
      this.setState({

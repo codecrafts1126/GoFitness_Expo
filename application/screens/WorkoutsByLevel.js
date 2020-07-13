@@ -7,9 +7,9 @@ import { LinearGradient } from 'expo-linear-gradient';
 import {Grid, Row } from 'react-native-easy-grid';
 import { Container, Text} from 'native-base';
 
-import ConfigApp from '../utils/ConfigApp';
+import configs from '../utils/configs';
 
-var styles = require('../../assets/files/Styles');
+var styles = require('@utils/styles');
 var {height, width} = Dimensions.get('window');
 
 export default class WorkoutsByLevel extends Component {
@@ -28,7 +28,7 @@ export default class WorkoutsByLevel extends Component {
 
   componentDidMount() {
     
-       return fetch(ConfigApp.URL+'json/data_wlevel.php?level='+this.props.navigation.state.params.IdLevel)
+       return fetch(configs.baseURL+'json/data_wlevel.php?level='+this.props.navigation.state.params.IdLevel)
          .then((response) => response.json())
          .then((responseJson) => {
            this.setState({
@@ -69,7 +69,7 @@ export default class WorkoutsByLevel extends Component {
           refreshing="false"
           renderItem={({item}) => 
                 <TouchableOpacity onPress={() => this.WorkoutDetails(item)} activeOpacity={1}>
-                <ImageBackground source={{uri: ConfigApp.URL+'images/'+item.workout_image}} style={styles.background_card}>
+                <ImageBackground source={{uri: configs.baseURL+'images/'+item.workout_image}} style={styles.background_card}>
                     <LinearGradient colors={['rgba(0,0,0,0.6)', 'rgba(0,0,0,0.9)']} style={styles.gradient_card}>
                             <Text style={styles.category_card}>{item.goal_title}</Text>
                             <Text style={styles.title_card}>{item.workout_title}</Text>

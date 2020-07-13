@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import ConfigApp from '../utils/ConfigApp';
+import configs from '../utils/configs';
 import { AdMobBanner } from 'expo-ads-admob';
 
 class RectangleAd extends React.Component {

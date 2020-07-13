@@ -14,17 +14,17 @@ class AthenaDropdown extends React.Component {
         super();
         this.state = {
             value: '',
-            color: colors.light_gray,
-            underline: colors.light_gray,
+            color: colors.middle_gray,
+            underline: colors.middle_gray,
             fontSize: new Animated.Value(16),
-            animationY: new Animated.Value(-40)
+            animationY: new Animated.Value(-20)
         }
     }
 
     _start = () => {
-        this.setState({ color: colors.blue, underline: colors.blue })
+        this.setState({ color: colors.textfield_highlight, underline: colors.textfield_highlight })
         Animated.timing(this.state.animationY, {
-            toValue: -15,
+            toValue: 3,
             duration: 300
         }).start();
         Animated.timing(this.state.fontSize, {
@@ -34,10 +34,10 @@ class AthenaDropdown extends React.Component {
     }
 
     _end = () => {
-        if (this.state.value == "") {
-            this.setState({ color: colors.light_gray, underline: colors.light_gray })
+        if (this.props.gender < 1) {
+            this.setState({ color: colors.middle_gray, underline: colors.middle_gray })
             Animated.timing(this.state.animationY, {
-                toValue: -40,
+                toValue: -20,
                 duration: 300
             }).start();
             Animated.timing(this.state.fontSize, {
@@ -46,6 +46,7 @@ class AthenaDropdown extends React.Component {
             }).start();
         }
     }
+
     onChangeText(value) {
         this.setState({ value: value })
         this.props.onChangeText(value)
@@ -58,8 +59,8 @@ class AthenaDropdown extends React.Component {
             rightIconName, rightIconType, rightIconColor,
         } = this.props;
         return (
-            <View style={[styles.container,
-            marginTop != null ? { marginTop: marginTop } : { marginTop: 10 },
+            <View style={[styles.container, {height: 50, borderBottomColor: this.state.underline, borderBottomWidth: 1, marginBottom: -16 },
+            marginTop != null ? { marginTop: marginTop } : { marginTop: 0 },
             width != null ? { width: width } : { width: wp('90.0%') }]}>
                 <Animated.Text
                     style={[!isRTL ? { textAlign: 'left' } : { textAlign: 'right' },
@@ -77,12 +78,13 @@ class AthenaDropdown extends React.Component {
                         isRTL={isRTL}
                         data={data}
                         value={this.state.value}
-                        containerStyle={[styles.textInput, !isRTL ? { textAlign: 'left' } : { textAlign: 'right' }, { marginBottom: 0, width: '100%', borderBottomColor: this.state.underline }]}
+                        containerStyle={[styles.textInput, !isRTL ? { textAlign: 'left' } : { textAlign: 'right' }, { marginBottom: 15, width: '100%', borderBottomWidth: 0 }]}
                         onChangeText={(value) => this.onChangeText(value)}
                         onFocus={() => this._start()}
-                        onBlur={() => this._end()} />
+                        onBlur={() => this._end()} 
+                        />
                     {isRTL && leftIconName != null ? <Icon name={leftIconName} type={leftIconType} color={leftIconColor} size={hp('3.0%')} /> : <View />}
-                    <View style={{ left: -10, marginTop: 30 }} >
+                    <View style={{ left: -10, marginTop: -10 }} >
                         <Icon name='chevron-down' type="material-community" size={hp('2.0%')} />
                     </View>
                 </View>

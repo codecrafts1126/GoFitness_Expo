@@ -7,11 +7,12 @@ import { Ionicons } from '@expo/vector-icons';
 
 import AppIntroSlider from 'react-native-app-intro-slider';
 
+import { AthenaButton } from "@components";
+import global from '@constants/styles';
 import styles from "./styles";
 import strings from '@constants/strings';
 import colors from "@constants/colors";
 import images from '@constants/images';
-import { AthenaButton } from "@components";
 import i18n from "@utils/i18n";
 import API from '@utils/API';
 
@@ -28,11 +29,14 @@ class Splash extends React.Component {
 
     constructor(props) {
         super(props);
+        this.state = {
+            
+        }
     }
 
-    _renderItem = ({ item }) => {
+    _renderItem = ({ item, key }) => {
         return (
-            <View style={{ height: hp('80.0%'), justifyContent: 'center', alignItems: 'center' }}>
+            <View key={key} style={{ height: hp('80.0%'), justifyContent: 'center', alignItems: 'center' }}>
                 <View style={{ height: hp('62.0%'), justifyContent: 'center', alignItems: 'center' }}>
                     <Image source={item.image} style={{
                         width: wp('100.0%'), height: hp('62.0%')
@@ -73,8 +77,8 @@ class Splash extends React.Component {
                         <View style={styles.containerBottom}>
                             <AthenaButton
                                 title={i18n.translate(strings.ST301).toUpperCase()}
-                                color={colors.button_back}
-                                fontColor={colors.button_font}
+                                color={colors.primary}
+                                fontColor={colors.white}
                                 width={wp('39.0%')}
                                 height={40}
                                 marginTop={20}
@@ -83,8 +87,8 @@ class Splash extends React.Component {
                             <View style={{ width: 2 }} />
                             <AthenaButton
                                 title={i18n.translate(strings.ST302).toUpperCase()}
-                                color={colors.button_back2}
-                                fontColor={colors.button_font}
+                                color={colors.primary}
+                                fontColor={colors.white}
                                 width={wp('39.0%')}
                                 height={40}
                                 marginTop={20}

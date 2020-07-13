@@ -4,6 +4,7 @@ import { Container, Header, Body, Left, Text, Title, Right, View } from 'native-
 import { NavigationActions } from 'react-navigation';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import { Ionicons } from '@expo/vector-icons';
+import { connect } from 'react-redux';
 
 import HTML from 'react-native-render-html';
 
@@ -14,7 +15,7 @@ import images from '@constants/images';
 import { AppPreLoader } from "@components";
 import i18n from "@utils/i18n";
 import API from '@utils/API';
-import ConfigApp from '@utils/ConfigApp';
+import configs from '@utils/configs';
 
 class TermsGuest extends React.Component {
     static navigationOptions = {
@@ -29,7 +30,7 @@ class TermsGuest extends React.Component {
     }
 
     componentDidMount() {
-        return fetch(ConfigApp.URL + 'json/data_strings.php')
+        return fetch(configs.baseURL + 'json/data_strings.php')
             .then((response) => response.json())
             .then((responseJson) => {
                 this.setState({
@@ -45,7 +46,7 @@ class TermsGuest extends React.Component {
 
 
     render() {
-        const isRTL = i18n.isRTL();
+        const { isRTL } = this.props;
         if (this.state.isLoading) {
             return (
                 <AppPreLoader />
@@ -96,4 +97,10 @@ class TermsGuest extends React.Component {
     }
 }
 
-export default TermsGuest;
+const mapStateToProps = state => {
+    return {
+        isRTL: state.account.isRTL,
+    }
+}
+
+export default connect(mapStateToProps, undefined)(TermsGuest);

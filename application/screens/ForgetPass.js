@@ -10,7 +10,7 @@ import DropdownAlert from 'react-native-dropdownalert';
 import { TextField } from 'react-native-material-textfield';
 
 
-var styles = require('../../assets/files/Styles');
+var styles = require('@utils/styles');
 import Strings from '../utils/Strings';
 import i18n from "../utils/i18n";
 import API from '../utils/API';
@@ -87,7 +87,7 @@ export default class ForgetPass extends Component {
 				<Body>
 					<KeyboardAwareScrollView>
 						<View style={{ flexDirection: 'column', justifyContent: 'center', alignItems: 'center', padding: 20, marginTop: 30, width: wp('100.0%') }}>
-							<Image source={require('../../assets/images/logo_dark.png')} style={styles.logo_start} resizeMode="contain" />
+							<Image source={require('@assets/images/logo_dark.png')} style={styles.logo_start} resizeMode="contain" />
 							<TextField
 								isRTL={isRTL}
 								label={i18n.translate(Strings.ST323)}

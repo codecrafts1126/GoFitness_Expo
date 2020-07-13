@@ -5,19 +5,21 @@ import colors from "@constants/colors";
 
 export default StyleSheet.create({
     container: {
-        // justifyContent: 'center', alignItems: 'center',
-        width: wp('100.0%'), height: hp('100.0%'),
-        backgroundColor: colors.background,
+        width: wp('100.0%'), 
+        height: hp('100.0%'),
+        backgroundColor: colors.background_color,
     },
     header: {
-        backgroundColor: '#fff',
+        backgroundColor: colors.white,
         borderBottomWidth: 0,
         shadowOpacity: 0,
         elevation: 0
     },
     back: {
-        justifyContent: 'center', alignItems: 'flex-start',
-        width: 50, height: 40
+        justifyContent: 'center', 
+        alignItems: 'flex-start',
+        width: 50, 
+        height: 40
     },
     logo: {
         width: 140,
