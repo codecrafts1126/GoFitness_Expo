@@ -1,18 +1,22 @@
-import React, { Component } from 'react';
-import configs from '../utils/configs';
+import React, {Component} from 'react';
+import ConfigApp from '../utils/ConfigApp';
 import { AdMobBanner } from 'expo-ads-admob';
 
 class BannerAd extends React.Component {
 
-  render() {
+  render () {
+
     return (
-      <AdMobBanner
-        bannerSize="banner"
-        adUnitID={configs.BANNER_ID}
-        testDeviceID={configs.TESTDEVICE_ID}
-        onDidFailToReceiveAdWithError={this.bannerError} />
+
+<AdMobBanner
+  bannerSize="banner"
+  adUnitID={ConfigApp.BANNER_ID}
+  testDeviceID={ConfigApp.TESTDEVICE_ID}
+  onDidFailToReceiveAdWithError={this.bannerError} />
+
     )
   }
+
 }
 
 export default BannerAd;

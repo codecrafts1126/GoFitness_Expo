@@ -6,12 +6,12 @@ import Icon from 'react-native-vector-icons/SimpleLineIcons';
 import { LinearGradient } from 'expo-linear-gradient';
 import {Grid, Row } from 'react-native-easy-grid';
 import { Container, Text, Body, Right, List, ListView, Left, Thumbnail, ListItem} from 'native-base';
-import configs from '../utils/configs';
+import ConfigApp from '../utils/ConfigApp';
 import Strings from '../utils/Strings';
 import BannerAd from '../components/BannerAd';
 
 
-var styles = require('@utils/styles');
+var styles = require('../../assets/files/Styles');
 var {height, width} = Dimensions.get('window');
 
 export default class Tags extends Component {
@@ -28,7 +28,7 @@ export default class Tags extends Component {
 
   componentDidMount() {
     
-       return fetch(configs.baseURL+'json/data_tags.php')
+       return fetch(ConfigApp.URL+'json/data_tags.php')
          .then((response) => response.json())
          .then((responseJson) => {
            this.setState({

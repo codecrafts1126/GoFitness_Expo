@@ -7,14 +7,14 @@ import {Grid, Row, Col } from 'react-native-easy-grid';
 import { Container, Content, Body, Text, List, Right, Button, ListItem} from 'native-base';
 import * as firebase from 'firebase'; 
 import Strings from '../utils/Strings';
-import configs from '../utils/configs';
+import ConfigApp from '../utils/ConfigApp';
 import BannerAd from '../components/BannerAd';
 import {AdMobInterstitial} from 'expo-ads-admob';
 
 import ToastModal from '../components/ToastModal';
 import Toast from 'react-native-root-toast';
 
-var styles = require('@utils/styles');
+var styles = require('../../assets/files/Styles');
 var {height, width} = Dimensions.get('window');
 
 
@@ -39,8 +39,8 @@ static navigationOptions = {
 
   _loadInitialState = async () => {
     
-    AdMobInterstitial.setAdUnitID(configs.INTERSTITIAL_ID);
-    AdMobInterstitial.setTestDeviceID(configs.TESTDEVICE_ID);
+    AdMobInterstitial.setAdUnitID(ConfigApp.INTERSTITIAL_ID);
+    AdMobInterstitial.setTestDeviceID(ConfigApp.TESTDEVICE_ID);
     await AdMobInterstitial.requestAdAsync();
     await AdMobInterstitial.showAdAsync();
   };
@@ -119,10 +119,10 @@ const {item} = this.state;
     return (
 <Container style={styles.background_general}>
 
-<ImageBackground source={{uri: configs.baseURL+'images/'+item.workout_image}} style={styles.background_workout}>
+<ImageBackground source={{uri: ConfigApp.URL+'images/'+item.workout_image}} style={styles.background_workout}>
 <LinearGradient colors={['rgba(0,0,0,0.5)', 'rgba(0,0,0,0.7)',]} style={styles.gradient_workout}>
 <TouchableOpacity activeOpacity={1} style={styles.touchBookmarkTran} onPress={this.saveWorkouts.bind(this, item.workout_id, item.workout_title, item.workout_image, item.workout_duration, item.goal_title, item.level_title, user.uid)}>
-<Image source={require('@assets/images/bookmarked.png')} style={{width: 25, height: 25}}/>
+<Image source={require('../../assets/images/bookmarked.png')} style={{width: 25, height: 25}}/>
 </TouchableOpacity>
     <Text style={styles.title_workout}>{item.workout_title}</Text>
     <Text style={styles.category_workout}>{item.workout_duration} {Strings.ST95}</Text>

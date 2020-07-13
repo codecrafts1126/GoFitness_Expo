@@ -4,10 +4,10 @@ import { NavigationActions, StackNavigator, withNavigation } from 'react-navigat
 import{AsyncStorage, TouchableOpacity, Dimensions, View, Image, ScrollView, FlatList} from 'react-native';
 import Icon from 'react-native-vector-icons/SimpleLineIcons';
 import { Container, Body, Thumbnail, Text, List, Right, ListItem} from 'native-base';
-import configs from '../utils/configs';
+import ConfigApp from '../utils/ConfigApp';
 import ListEmpty from './ListEmpty';
 
-var styles = require('@utils/styles');
+var styles = require('../../assets/files/Styles');
 var {height, width} = Dimensions.get('window');
 
 class WorkoutFav extends React.Component {
@@ -82,7 +82,7 @@ workouts: workoutsItems || []
           renderItem={({item, index}) =>
 
 <ListItem style={{paddingLeft: 0, marginLeft: 0, backgroundColor:'#FFF', opacity: 1, borderColor: 'rgba(0,0,0,0.05)', borderBottomWidth: 1}}  onPress={() => this.WorkoutDetails(item)} >
-              <Thumbnail square size={80} source={{ uri: configs.baseURL+'images/'+item.workout_image }} style={{paddingLeft: 10, marginLeft: 10, borderRadius: 6}} />
+              <Thumbnail square size={80} source={{ uri: ConfigApp.URL+'images/'+item.workout_image }} style={{paddingLeft: 10, marginLeft: 10, borderRadius: 6}} />
               <Body style={{paddingLeft: 0, marginLeft: 0}}>
                 <Text numberOfLines={2} style={{fontSize: 14, marginBottom: 3}}>
                 {item.workout_title}

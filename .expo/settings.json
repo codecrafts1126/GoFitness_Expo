@@ -1,8 +1,8 @@
 {
-  "urlRandomness": "d7-yyy",
   "hostType": "lan",
   "lanType": "ip",
   "dev": true,
   "minify": false,
+  "urlRandomness": "eb-va5",
   "https": false
 }

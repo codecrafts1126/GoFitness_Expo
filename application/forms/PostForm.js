@@ -6,7 +6,7 @@ import {View} from "react-native";
 import {Button, Text} from 'native-base';
 import * as firebase from 'firebase';
 
-var styles = require('@utils/styles');
+var styles = require('../../assets/files/Styles');
 
 export default class PostForm extends Component {
 	constructor() {

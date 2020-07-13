@@ -8,9 +8,9 @@ import CalcResult from '../components/CalcResult';
 import CalcSlider from '../components/CalcSlider';
 
 
-import configs from '../utils/configs';
+import ConfigApp from '../utils/ConfigApp';
 
-var styles = require('@utils/styles');
+var styles = require('../../assets/files/Styles');
 var {height, width} = Dimensions.get('window');
 
 export default class Calculator extends Component {

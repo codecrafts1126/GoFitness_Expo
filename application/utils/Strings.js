@@ -3,49 +3,6 @@
 
 const Strings = {
 
-    ST300: "Get Started",
-    ST301: "Sign In",    
-    ST302: "Sign Up",
-    ST303: "Email / National ID",
-    ST304: "Password",
-    ST305: "Enter",
-    ST306: "Log In",
-    ST307: "Register",
-    ST308: "Forgot Password",
-    ST309: "Create new account",
-    //Login Message
-    ST310: "Please enter email / national id",
-    ST311: "Please enter password",
-    ST312: "Please enter login info",
-    ST313: "Warning",
-    ST314: "Error",
-    ST315: "Login Failed",
-    ST316: "Success",
-    ST317: "Login Success",
-    ST318: "Reset password Success",
-    ST319: "Reset password Failed",
-    ST320: "Please enter email",
-    //Signup Page
-    ST321: "National ID",
-    ST322: "Full Name",
-    ST323: "Email",
-    ST324: "Phone Number",
-    ST325: "Birthday",
-    ST326: "Privacy & Terms",
-    //Signup Message
-    ST327: "Please enter national id",
-    ST328: "Please enter phone number",
-    ST329: "Please select birthday",
-    ST330: "Please enter register info",
-    ST331: "Please enter name",
-    ST332: "Register Success",
-    ST333: "Register Failed",
-    ST334: "Invalid Email",
-    ST335: "Please enter email again",
-    ST336: "Gender",
-
-
-
     ST0: "Fitness",
 
     ST1: "Workouts",
@@ -260,38 +217,7 @@ const Strings = {
 
     ST106: "Name",
 
-    ST107: "Select Language",
-
     EMAIL_ID: "Email/ID",
-
-    ST201: "Please Enter Email/ID",
-
-    ST202: "Please Enter Password",
-
-    ST203: "First Name",
-
-    ST204: "Last Name",
-
-    ST205: "National ID",
-
-    ST206: "Phone Number",
-
-    ST207: "User already registered",
-
-    ST208: "Invalid Email",
-
-    ST209: "Invalid Params",
-
-    ST210: "Login Success",
-
-    ST211: "Login Failed",
-
-    ST212: "Warning",
-
-    ST213: "Error",
-
-    ST215: "CREATE ACCOUNT",
-   
 };
 
 export default Strings;

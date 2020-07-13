@@ -4,12 +4,12 @@ import { AppRegistry, StyleSheet, TextInput, View, Alert, Dimensions, Image } fr
 import {Grid, Row, Col } from 'react-native-easy-grid';
 import Icon from 'react-native-vector-icons/Entypo';
 import { Container, Form, Item, Input, Label, Textarea, Button, Text } from 'native-base';
-import configs from '../utils/configs';
+import ConfigApp from '../utils/ConfigApp';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import Toast from 'react-native-root-toast';
 import Strings from '../utils/Strings';
 
-var styles = require('@utils/styles');
+var styles = require('../../assets/files/Styles');
 var {height, width} = Dimensions.get('window');
 
 export default class ContactUs extends Component {
@@ -37,7 +37,7 @@ constructor(props) {
  const { UserEmail }  = this.state ;
  const { UserMessage }  = this.state ;
  
-fetch(configs.baseURL+'controller/contactform.php', {
+fetch(ConfigApp.URL+'controller/contactform.php', {
   method: 'POST',
   headers: {
     'Accept': 'application/json',
@@ -83,7 +83,7 @@ fetch(configs.baseURL+'controller/contactform.php', {
 <View style={{flex: 1, margin: 15}}>
 
 <View style={{alignItems: 'center', justifyContent: 'center'}}>
-      <Image source={require('@assets/images/contact.png')} style={{width: 100, height: 100, marginTop: 10}} />
+      <Image source={require('../../assets/images/contact.png')} style={{width: 100, height: 100, marginTop: 10}} />
 </View>
 
 <Text style={{paddingLeft: 0, paddingBottom: 10, marginBottom: 5, marginTop: 15, fontSize: 22, fontWeight:'bold', textAlign: 'center' }}>

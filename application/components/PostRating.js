@@ -4,7 +4,7 @@ import {View} from "react-native";
 import StarRating from 'react-native-star-rating';
 
 
-const starImage = require('@assets/images/star.png')
+const starImage = require('../../assets/images/star.png')
 
 export default class PostRating extends Component {
 	constructor (props) {

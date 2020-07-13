@@ -1,77 +1,47 @@
-import React from "react";
-import { I18nManager } from "react-native";
-import * as Localization from "expo-localization";
-import i18n from "i18n-js";
+import ReactNative from 'react-native';
+import moment from 'moment';
+import I18n from 'i18n-js';
 
-const en = require("../translations/en");
-const ar = require("../translations/ar");
-const he = require("../translations/he");
-const ru = require("../translations/ru");
-const cn = require("../translations/cn");
+// Import all locales
+import en from '../translations/en.json';
+import he from '../translations/he.json';
+import ar from '../translations/ar.json';
 
-const rtlLanguages = [
-  'ar', 'arc', 'dv', 'fa', 'ha', 'he', 'khw', 'ks', 'ku', 'ps', 'ur', 'yi'
-]
+// Should the app fallback to English if user locale doesn't exists
+I18n.fallbacks = true;
 
-const translate = (key, config) => {
-  let msg = i18n.t(key, config)
-  console.log('msg: ' + msg)
-  if (missingTranslationRegex.test(msg)) {
-    msg = i18n.t(key, 'en')
-  }
-  return msg
-}
-
-const missingTranslationRegex = /^\[missing ".*" translation\]$/
-
-const setI18nConfig = () => {
-  i18n.fallbacks = true
-  i18n.translations = { en, ar, he, ru, cn };
-  i18n.defaultLocale = 'en'
-  // I18nManager.forceRTL(false);
+// Define the supported translations
+I18n.translations = {
+  en,
+  he,
+  ar
 };
 
-const setLocale = (locale = 'en') => {
-  i18n.locale = locale
-}
+const currentLocale = I18n.currentLocale();
 
-const getCurrentLocale = () => {
-  return i18n.locale
-}
+// Is it a RTL language?
+export const isRTL = currentLocale.indexOf('he') === 0 || currentLocale.indexOf('ar') === 0;
 
-const setDefaultLocale = (locale = 'en') => {
-  i18n.defaultLocale = locale
-}
+// Allow RTL alignment in RTL languages
+ReactNative.I18nManager.allowRTL(isRTL);
 
-const enableFallbacks = () => {
-  i18n.fallbacks = true;
-}
-
-const getLocales = async () => {
-  return await Localization.getLocales()
-}
-
-const isRTL = () => {
-  const currLocale = i18n.locale
-  let count = 0
-  for(let i = 0; i < 12; i++){
-    if(rtlLanguages[i] == currLocale){
-      count = 1;
-      break;
+// Localizing momentjs to Hebrew, Arabic or English
+if (currentLocale.indexOf('he') === 0) {
+  require('moment/locale/he.js');
+  moment.locale('he');
+} else {
+    if (currentLocale.indexOf('ar') === 0) {
+        require('moment/locale/ar.js');
+        moment.locale('ar');
     }
-  }
-  if(count == 0){
-    // I18nManager.forceRTL(false);
-    return false;
-  } else{
-    // I18nManager.forceRTL(true);
-    return true;
-  }
+    else {
+        moment.locale('en');
+    }
 }
 
-export default {
-  enableFallbacks, setDefaultLocale,
-  getCurrentLocale, setLocale,
-  setI18nConfig, translate,
-  getLocales, isRTL
-}
+// The method we'll use instead of a regular string
+export function strings(name, params = {}) {
+  return I18n.t(name, params);
+};
+
+export default I18n;

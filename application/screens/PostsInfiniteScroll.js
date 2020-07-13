@@ -9,9 +9,9 @@ import { Container, Text, Body, Right, List, ListView, Left, Thumbnail, ListItem
 
 import SwiperFlatList from 'react-native-swiper-flatlist';
 
-import configs from '../utils/configs';
+import ConfigApp from '../utils/ConfigApp';
 
-var styles = require('@utils/styles');
+var styles = require('../../assets/files/Styles');
 var {height, width} = Dimensions.get('window');
 
 export default class Posts extends Component {
@@ -29,7 +29,7 @@ export default class Posts extends Component {
   }
 
 componentDidMount() {
-   return fetch(configs.baseURL+'json/data_muscle.php')
+   return fetch(ConfigApp.URL+'json/data_muscle.php')
    .then((response) => response.json())
    .then((responseJson) => {
      this.setState({
@@ -97,7 +97,7 @@ this.addRecords(this.state.page);
           renderItem={({item, index}) => 
                 <TouchableOpacity onPress={() => this.PostDetails(item)} activeOpacity={1} style={{flex: 1}}>
                 <View style={{margin: 5, marginLeft: 4}}>
-                <ImageBackground source={{uri: configs.baseURL+'images/'+item.exercise_image}} style={styles.background_posts_2columns}>
+                <ImageBackground source={{uri: ConfigApp.URL+'images/'+item.exercise_image}} style={styles.background_posts_2columns}>
                     <LinearGradient colors={['rgba(0,0,0,0.3)', 'rgba(0,0,0,0.8)']} style={styles.gradient_posts_2columns}>
                             <Text numberOfLines={1} style={styles.date_posts}>{item.level_title}</Text>
                             <Text numberOfLines={1} style={styles.title_posts_categories}>{item.exercise_title}</Text>

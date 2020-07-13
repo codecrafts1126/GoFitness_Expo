@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import configs from '../utils/configs';
+import ConfigApp from '../utils/ConfigApp';
 import {AdMobInterstitial} from 'expo-ads-admob';
 
 class InterstitialAd extends React.Component {
@@ -11,7 +11,7 @@ class InterstitialAd extends React.Component {
 
   _loadInitialState = async () => {
     
-    AdMobInterstitial.setAdUnitID(configs.INTERSTITIAL_ID); // Test ID, Replace with your-admob-unit-id
+    AdMobInterstitial.setAdUnitID(ConfigApp.INTERSTITIAL_ID); // Test ID, Replace with your-admob-unit-id
     AdMobInterstitial.setTestDeviceID('EMULATOR');
     await AdMobInterstitial.requestAdAsync();
     await AdMobInterstitial.showAdAsync();

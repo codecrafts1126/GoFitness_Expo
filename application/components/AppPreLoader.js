@@ -1,20 +1,20 @@
 import React, { Component } from 'react';
-import { ActivityIndicator, View, StyleSheet, Dimensions } from 'react-native';
+import {ActivityIndicator, View, StyleSheet, Dimensions} from 'react-native';
 
-const { width, height } = Dimensions.get('window');
+const {width, height} = Dimensions.get('window');
 
-export default class AppPreLoader extends Component {
-	render() {
+export default class AppPreLoader extends Component{
+	render (){
 		return (
-			<View style={[styles.preloader]}>
-				<ActivityIndicator style={{ height: 80 }} size="large" color="#4284d5" />
-			</View>
-		)
+<View style={[styles.preloader]}>
+<ActivityIndicator style={{height: 80}} size="large" color="#4284d5" />
+</View>
+			)
 	}
 }
 
 const styles = StyleSheet.create({
-	preloader: {
+	preloader:{
 		flex: 1,
 		flexDirection: 'column',
 		justifyContent: 'center',

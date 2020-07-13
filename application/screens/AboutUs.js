@@ -5,13 +5,13 @@ import{TouchableOpacity, Dimensions, View, Image, FlatList, ScrollView} from 're
 import {Grid, Row, Col } from 'react-native-easy-grid';
 import Icon from 'react-native-vector-icons/Entypo';
 import { Container, Text} from 'native-base';
-import configs from '../utils/configs';
+import ConfigApp from '../utils/ConfigApp';
 import HTML from 'react-native-render-html';
 
 import Strings from '../utils/Strings';
 
 
-var styles = require('@utils/styles');
+var styles = require('../../assets/files/Styles');
 var {height, width} = Dimensions.get('window');
 
 export default class AboutUs extends Component {
@@ -32,7 +32,7 @@ constructor(props) {
 
   componentDidMount() {
     
-       return fetch(configs.baseURL+'json/data_strings.php')
+       return fetch(ConfigApp.URL+'json/data_strings.php')
          .then((response) => response.json())
          .then((responseJson) => {
            this.setState({
