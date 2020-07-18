@@ -5,18 +5,25 @@ import colors from "@constants/colors";
 
 export default StyleSheet.create({
     container: {
-        justifyContent: 'center', alignItems: 'center',
-        width: wp('100.0%'), height: hp('100.0%'),
-        backgroundColor: colors.background,
+        justifyContent: 'center', 
+        alignItems: 'center',
+        width: wp('100.0%'), 
+        height: hp('100.0%'),
+        backgroundColor: colors.background_color,
     },
     containerTop: {
-        justifyContent: 'center', alignItems: 'center',
-        width: wp('100.0%'), height: hp('85.0%'),
-        backgroundColor: colors.background,
+        justifyContent: 'center', 
+        alignItems: 'center',
+        width: wp('100.0%'), 
+        height: hp('85.0%'),
+        backgroundColor: colors.background_color,
     },
     containerBottom: {
-        flexDirection: 'row', justifyContent: 'center', alignItems: 'flex-start',
-        width: wp('90.0%'), height: hp('15.0%'),
-        backgroundColor: colors.background,
+        flexDirection: 'row', 
+        justifyContent: 'center', 
+        alignItems: 'flex-start',
+        width: wp('90.0%'), 
+        height: hp('15.0%'),
+        backgroundColor: colors.background_color,
     }
 });

@@ -6,10 +6,10 @@ import {Container,Title,Content,Button,Icon,Picker,Form,Text,ListItem,Left,Right
 import HeaderPicker from '../components/HeaderPicker';
 import BannerAd from '../components/BannerAd';
 
-import ConfigApp from '../utils/ConfigApp';
+import configs from '../utils/configs';
 import Strings from '../utils/Strings';
 
-var styles = require('../../assets/files/Styles');
+var styles = require('@utils/styles');
 var {height, width} = Dimensions.get('window');
 
 export default class WorkoutSearch extends Component {
@@ -32,8 +32,8 @@ export default class WorkoutSearch extends Component {
 
   componentDidMount() {
     
-    var goals_url = ConfigApp.URL+'json/data_goals.php';
-    var levels_url = ConfigApp.URL+'json/data_levels.php';
+    var goals_url = configs.baseURL+'json/data_goals.php';
+    var levels_url = configs.baseURL+'json/data_levels.php';
 
     fetch(goals_url).then((response) => response.json()).then((responseJson)  => {
         this.setState({

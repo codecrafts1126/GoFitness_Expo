@@ -1,19 +1,21 @@
 import React from 'react';
-import { I18nManager, Image, TouchableOpacity } from 'react-native';
-import { Container, Header, Body, Left, Text, Title, Right, View } from 'native-base';
-import { NavigationActions } from 'react-navigation';
+import { I18nManager, StatusBar, Image, TouchableOpacity, AsyncStorage } from 'react-native';
+import { Root, Container, Header, Body, Left, Text, Title, Right, View } from 'native-base';
+import { StackActions, NavigationActions } from 'react-navigation';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import { Ionicons } from '@expo/vector-icons';
+import { connect } from 'react-redux';
+import { setLogin, setUser, resetPassword, signupSuccess } from '@modules/account/actions';
 
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import DropdownAlert from 'react-native-dropdownalert';
-import { TextField } from 'react-native-material-textfield';
 
+import { AthenaButton, AthenaTextInput } from "@components";
+import global from '@constants/styles';
 import styles from "./styles";
 import strings from '@constants/strings';
 import colors from "@constants/colors";
 import images from '@constants/images';
-import { AthenaButton, AthenaTextInput } from "@components";
 import i18n from "@utils/i18n";
 import API from '@utils/API';
 
@@ -31,6 +33,16 @@ class Signin extends React.Component {
         }
     }
 
+    componentDidMount() {
+        if (this.props.reseted == true) {
+            this.dropDownAlertRef.alertWithType('success', `${i18n.translate(strings.ST316)}`, `${i18n.translate(strings.ST337)}`);
+            this.props.resetPassword(false);
+        }
+        if (this.props.signup == true) {
+            this.dropDownAlertRef.alertWithType('success', `${i18n.translate(strings.ST316)}`, `${i18n.translate(strings.ST337)}`);
+            this.props.signupSuccess(false);
+        }
+    }
     async login() {
         const { email, password } = this.state;
         if (email, password) {
@@ -42,12 +54,17 @@ class Signin extends React.Component {
                 }
             })
             if (loginResult.data.result == "success") {
-                this.dropDownAlertRef.alertWithType('success', `${i18n.translate(strings.ST316)}`, `${i18n.translate(strings.ST317)}`);
-                const navigateAction = NavigationActions.navigate({
-                    routeName: 'HomeScreen'
+                await AsyncStorage.setItem('LOGGED', "true");
+                await AsyncStorage.setItem('USER', JSON.stringify(loginResult.data.user));
+                this.props.setLogin(true);
+                this.props.setUser(loginResult.data.user);
+                const resetAction = StackActions.reset({
+                    index: 0,
+                    actions: [
+                        NavigationActions.navigate({ routeName: 'MainStack' })
+                    ]
                 });
-                this.props.navigation.dispatch(navigateAction);
-
+                this.props.navigation.dispatch(resetAction);
             } else if (loginResult.data.result == "failure") {
                 this.dropDownAlertRef.alertWithType('error', `${i18n.translate(strings.ST314)}`, `${i18n.translate(strings.ST315)}`);
             }
@@ -98,22 +115,26 @@ class Signin extends React.Component {
     }
 
     render() {
-        const isRTL = i18n.isRTL();
+        const { isRTL } = this.props;
         return (
             <Container style={styles.container}>
                 <Header style={styles.header}>
                     <Left style={{ flex: 1 }}>
-                        {!isRTL ? <TouchableOpacity style={[styles.back, { marginLeft: 10 }]} onPress={() => this.props.navigation.goBack()}>
-                            <Ionicons name='md-arrow-round-back' style={{ transform: [{ scaleX: 1 }], fontSize: 22 }} />
-                        </TouchableOpacity> : <View />}
+                        {!isRTL ?
+                            <TouchableOpacity style={[styles.back, { marginLeft: 10 }]} onPress={() => this.props.navigation.goBack()}>
+                                <Ionicons name='md-arrow-round-back' style={{ transform: [{ scaleX: 1 }], fontSize: 22 }} />
+                            </TouchableOpacity> : <View />
+                        }
                     </Left>
                     <Body style={{ flex: 4, justifyContent: 'center', alignItems: 'center' }}>
                         <Title style={{ color: colors.black }}>{i18n.translate(strings.ST301)}</Title>
                     </Body>
                     <Right style={{ flex: 1 }} >
-                        {isRTL ? <TouchableOpacity style={[styles.back, { marginRight: -25 }]} onPress={() => this.props.navigation.goBack()}>
-                            <Ionicons name='md-arrow-round-back' style={{ transform: [{ scaleX: -1 }], fontSize: 22 }} />
-                        </TouchableOpacity> : <View />}
+                        {isRTL ?
+                            <TouchableOpacity style={[styles.back, { marginRight: -25 }]} onPress={() => this.props.navigation.goBack()}>
+                                <Ionicons name='md-arrow-round-back' style={{ transform: [{ scaleX: -1 }], fontSize: 22 }} />
+                            </TouchableOpacity> : <View />
+                        }
                     </Right>
                 </Header>
                 <Body>
@@ -125,6 +146,7 @@ class Signin extends React.Component {
                                 value={this.state.email}
                                 placeholder={i18n.translate(strings.ST303)}
                                 keyboardType={"email-address"}
+                                autoCapitalize={"none"}
                                 width={wp('80.0%')}
                                 onChangeText={email => this.setState({ email })} />
                             <AthenaTextInput
@@ -143,8 +165,8 @@ class Signin extends React.Component {
                                 isRTL={isRTL}
                                 isDisabled={this.state.isDisabled}
                                 title={i18n.translate(strings.ST306)}
-                                color={colors.button_back}
-                                fontColor={colors.button_font}
+                                color={colors.primary}
+                                fontColor={colors.white}
                                 width={wp('80.0%')}
                                 height={40}
                                 marginTop={50}
@@ -163,10 +185,39 @@ class Signin extends React.Component {
                         </View>
                     </KeyboardAwareScrollView>
                 </Body>
-                <DropdownAlert ref={ref => this.dropDownAlertRef = ref} />
+                <DropdownAlert ref={ref => this.dropDownAlertRef = ref}
+                    isRTL={isRTL}
+                    contentContainerStyle={{ flex: 1, flexDirection: isRTL ? 'row-reverse' : 'row' }} />
             </Container>
         );
     }
 }
 
-export default Signin;
+const mapStateToProps = state => {
+    return {
+        logged: state.account.logged,
+        isRTL: state.account.isRTL,
+        reseted: state.account.reseted,
+        signup: state.account.signup,
+        profile: state.account.profile
+    }
+}
+
+const mapDispatchToProps = dispatch => {
+    return {
+        setLogin: (data) => {
+            dispatch(setLogin(data))
+        },
+        setUser: (data) => {
+            dispatch(setUser(data))
+        },
+        resetPassword: (data) => {
+            dispatch(resetPassword(data))
+        },
+        signupSuccess: (data) => {
+            dispatch(signupSuccess(data))
+        }
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Signin);

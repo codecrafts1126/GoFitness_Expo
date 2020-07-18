@@ -1,8 +1,9 @@
 {
+  "devToolsPort": 19002,
   "expoServerPort": 19000,
   "packagerPort": 19001,
-  "packagerPid": 9260,
-  "expoServerNgrokUrl": "https://fe-8zu.anonymous.fitness.exp.direct",
-  "packagerNgrokUrl": "https://packager.fe-8zu.anonymous.fitness.exp.direct",
-  "ngrokPid": 18968
+  "packagerPid": 111584,
+  "expoServerNgrokUrl": "https://38-g3q.anonymous.athena.exp.direct",
+  "packagerNgrokUrl": "https://packager.38-g3q.anonymous.athena.exp.direct",
+  "ngrokPid": 108264
 }

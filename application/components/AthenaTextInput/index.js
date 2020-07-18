@@ -12,15 +12,15 @@ class AthenaTextInput extends React.Component {
         super();
         this.state = {
             value: '',
-            color: colors.light_gray,
-            underline: colors.light_gray,
+            color: colors.middle_gray,
+            underline: colors.middle_gray,
             fontSize: new Animated.Value(16),
             animationY: new Animated.Value(-25)
         }
     }
 
     _start = () => {
-        this.setState({color: colors.blue, underline: colors.blue})
+        this.setState({color: colors.textfield_highlight, underline: colors.textfield_highlight})
         Animated.timing(this.state.animationY, {
             toValue: 0,
             duration: 300
@@ -33,7 +33,7 @@ class AthenaTextInput extends React.Component {
 
     _end = () => {
         if(this.state.value == "") {
-            this.setState({color: colors.light_gray, underline: colors.light_gray})
+            this.setState({color: colors.middle_gray, underline: colors.middle_gray})
             Animated.timing(this.state.animationY, {
                 toValue: -25,
                 duration: 300

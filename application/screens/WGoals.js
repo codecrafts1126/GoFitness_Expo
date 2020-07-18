@@ -7,10 +7,10 @@ import { LinearGradient } from 'expo-linear-gradient';
 import {Grid, Row } from 'react-native-easy-grid';
 import { Container, Text} from 'native-base';
 
-import ConfigApp from '../utils/ConfigApp';
+import configs from '../utils/configs';
 import Strings from '../utils/Strings';
 
-var styles = require('../../assets/files/Styles');
+var styles = require('@utils/styles');
 var {height, width} = Dimensions.get('window');
 
 export default class WGoals extends Component {
@@ -29,7 +29,7 @@ export default class WGoals extends Component {
 
   componentDidMount() {
     
-       return fetch(ConfigApp.URL+'json/data_goals.php')
+       return fetch(configs.baseURL+'json/data_goals.php')
          .then((response) => response.json())
          .then((responseJson) => {
            this.setState({
@@ -65,7 +65,7 @@ ListWorkoutsByGoal=(goal_id, goal_title)=>
           refreshing="false"
           renderItem={({item}) => 
                 <TouchableOpacity onPress={this.ListWorkoutsByGoal.bind(this, item.goal_id, item.goal_title)} activeOpacity={1}>
-                <ImageBackground source={{uri: ConfigApp.URL+'images/'+item.goal_image}} style={styles.background_categories}>
+                <ImageBackground source={{uri: configs.baseURL+'images/'+item.goal_image}} style={styles.background_categories}>
                     <LinearGradient colors={['rgba(0,0,0,0.6)', 'rgba(0,0,0,0.6)']} style={styles.gradient_categories}>
                     <View style={styles.title_categories_border}></View>
                     <LinearGradient colors={['rgba(0,0,0,0.6)', 'rgba(0,0,0,0.6)']} style={styles.title_categories_background}>

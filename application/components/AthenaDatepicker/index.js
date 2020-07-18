@@ -15,15 +15,15 @@ class AthenaDatepicker extends React.Component {
         super();
         this.state = {
             value: '',
-            color: colors.light_gray,
-            underline: colors.light_gray,
+            color: colors.middle_gray,
+            underline: colors.middle_gray,
             fontSize: new Animated.Value(16),
             animationY: new Animated.Value(-40)
         }
     }
 
     _start = () => {
-        this.setState({ color: colors.blue, underline: colors.blue })
+        this.setState({ color: colors.textfield_highlight, underline: colors.textfield_highlight })
         Animated.timing(this.state.animationY, {
             toValue: -15,
             duration: 300
@@ -36,7 +36,7 @@ class AthenaDatepicker extends React.Component {
 
     _end = () => {
         if (this.state.value == "") {
-            this.setState({ color: colors.light_gray, underline: colors.light_gray })
+            this.setState({ color: colors.middle_gray, underline: colors.middle_gray })
             Animated.timing(this.state.animationY, {
                 toValue: -40,
                 duration: 300
@@ -74,17 +74,19 @@ class AthenaDatepicker extends React.Component {
                 </Animated.Text> */}
                 <View style={[!isRTL ? {flexDirection: 'row'} : {flexDirection: 'row-reverse'}, styles.textField]}>
                     {!isRTL && leftIconName != null ? <Icon name={leftIconName} type={leftIconType} color={leftIconColor} size={hp('3.0%')} /> : <View />}
-                    <View><DatePicker
+                    <DatePicker
                         isRTL={isRTL}
-                        // style={[styles.textInput, !isRTL ? { textAlign: 'left' } : { textAlign: 'right' }, { marginBottom: 0, width: '100%', borderBottomColor: this.state.underline }]}
+                        style={{width: 500}}
+                        customStyles={{dateText: !isRTL ? { textAlign: 'left' } : { textAlign: 'right' },
+                                        placeholderText: !isRTL ? { textAlign: 'left' } : { textAlign: 'right' }}}
                         date={this.state.value}
                         mode="date" placeholder={moment().format("YYYY-MM-DD")}
                         confirmBtnText="Confirm" cancelBtnText="Cancel"
                         minDate="1820-01-01" maxDate={moment().format("YYYY-MM-DD")}
-                        onDateChange={(date) => { this.setState({ value: date }) }}
+                        onDateChange={(date) => this.onChangeText({ value: date }) }
                         onFocus={() => this._start()}
                         onBlur={() => this._end()} 
-                    /></View>
+                    />
                     {isRTL && leftIconName != null ? <Icon name={leftIconName} type={leftIconType} color={leftIconColor} size={hp('3.0%')} /> : <View />}
                 </View>
             </View>

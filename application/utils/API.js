@@ -1,6 +1,7 @@
 import axios from "axios";
+import configs from "@utils/configs";
 
 export default axios.create({
-    baseURL: "https://zobaba.com/fitness/json",
+    baseURL: configs.baseURL + "/json",
     responseType: "json"
 });

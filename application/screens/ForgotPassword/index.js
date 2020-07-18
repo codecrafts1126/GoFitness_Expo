@@ -1,18 +1,21 @@
 import React from 'react';
 import { I18nManager, Image, TouchableOpacity } from 'react-native';
 import { Container, Header, Body, Left, Text, Title, Right, View } from 'native-base';
-import { NavigationActions } from 'react-navigation';
+import { StackActions, NavigationActions } from 'react-navigation';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import { Ionicons } from '@expo/vector-icons';
+import { connect } from 'react-redux';
+import { resetPassword } from '@modules/account/actions';
 
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import DropdownAlert from 'react-native-dropdownalert';
 
+import { AthenaButton, AthenaTextInput } from "@components";
+import global from '@constants/styles';
 import styles from "./styles";
 import strings from '@constants/strings';
 import colors from "@constants/colors";
 import images from '@constants/images';
-import { AthenaButton, AthenaTextInput } from "@components";
 import i18n from "@utils/i18n";
 import API from '@utils/API';
 
@@ -44,11 +47,21 @@ class ForgotPassword extends React.Component {
                     }
                 })
                 if (resetResult.data.result == "success") {
-                    this.dropDownAlertRef.alertWithType('error', `${i18n.translate(strings.ST316)}`, `${i18n.translate(strings.ST318)}`);
+                    this.props.resetPassword(true);
+                    const resetAction = StackActions.reset({
+                        index: 2,
+                        actions: [
+                            NavigationActions.navigate({ routeName: 'Welcome' }),
+                            NavigationActions.navigate({ routeName: 'Splash' }),
+                            NavigationActions.navigate({ routeName: 'Signin' })
+                        ]
+                    });
+                    this.props.navigation.dispatch(resetAction);
+
                 } else if (resetResult.data.result == "failure") {
+                    this.setState({ isDisabled: false });
                     this.dropDownAlertRef.alertWithType('error', `${i18n.translate(strings.ST314)}`, `${i18n.translate(strings.ST319)}`);
                 }
-                this.setState({ isDisabled: false });
             }
         } else if (!email) {
             this.dropDownAlertRef.alertWithType('warn', `${i18n.translate(strings.ST313)}`, `${i18n.translate(strings.ST320)}`);
@@ -67,33 +80,38 @@ class ForgotPassword extends React.Component {
     }
 
     render() {
-        const isRTL = i18n.isRTL();
+        const { isRTL } = this.props;
         return (
             <Container style={styles.container}>
                 <Header style={styles.header}>
                     <Left style={{ flex: 1 }}>
-                        {!isRTL ? <TouchableOpacity style={[styles.back, { marginLeft: 10 }]} onPress={() => this.props.navigation.goBack()}>
-                            <Ionicons name='md-arrow-round-back' style={{ transform: [{ scaleX: 1 }], fontSize: 22 }} />
-                        </TouchableOpacity> : <View />}
+                        {!isRTL ?
+                            <TouchableOpacity style={[styles.back, { marginLeft: 10 }]} onPress={() => this.props.navigation.goBack()} >
+                                <Ionicons name='md-arrow-round-back' style={{ transform: [{ scaleX: 1 }], fontSize: 22 }} />
+                            </TouchableOpacity> : <View />
+                        }
                     </Left>
-                    <Body style={{ flex: 4, justifyContent: 'center', alignItems: 'center' }}>
-                        <Title style={{ color: colors.black }}>{i18n.translate(strings.ST308)}</Title>
+                    <Body style={{ flex: 4, justifyContent: 'center', alignItems: 'center' }} >
+                        <Title style={{ color: colors.black }}> {i18n.translate(strings.ST308)}</Title>
                     </Body>
                     <Right style={{ flex: 1 }} >
-                        {isRTL ? <TouchableOpacity style={[styles.back, { marginRight: -25 }]} onPress={() => this.props.navigation.goBack()}>
-                            <Ionicons name='md-arrow-round-back' style={{ transform: [{ scaleX: -1 }], fontSize: 22 }} />
-                        </TouchableOpacity> : <View />}
+                        {isRTL ?
+                            <TouchableOpacity style={[styles.back, { marginRight: -25 }]} onPress={() => this.props.navigation.goBack()} >
+                                <Ionicons name='md-arrow-round-back' style={{ transform: [{ scaleX: -1 }], fontSize: 22 }} />
+                            </TouchableOpacity> : <View />
+                        }
                     </Right>
                 </Header>
                 <Body>
                     <KeyboardAwareScrollView>
-                        <View style={{ flexDirection: 'column', justifyContent: 'center', alignItems: 'center', padding: 20, marginTop: 30, width: wp('100.0%') }}>
+                        <View style={{ flexDirection: 'column', justifyContent: 'center', alignItems: 'center', marginTop: 30, padding: 20, width: wp('100.0%') }}>
                             <Image source={images.logo_dark} style={styles.logo} resizeMode="contain" />
                             <AthenaTextInput
                                 isRTL={isRTL}
                                 value={this.state.email}
                                 placeholder={i18n.translate(strings.ST323)}
                                 keyboardType={"email-address"}
+                                autoCapitalize={"none"}
                                 width={wp('80.0%')}
                                 onChangeText={email => this.setState({ email })} />
                             <AthenaTextInput
@@ -107,8 +125,8 @@ class ForgotPassword extends React.Component {
                                 isRTL={isRTL}
                                 isDisabled={this.state.isDisabled}
                                 title={i18n.translate(strings.ST305)}
-                                color={colors.button_back}
-                                fontColor={colors.button_font}
+                                color={colors.primary}
+                                fontColor={colors.white}
                                 width={wp('80.0%')}
                                 height={40}
                                 marginTop={50}
@@ -116,10 +134,27 @@ class ForgotPassword extends React.Component {
                         </View>
                     </KeyboardAwareScrollView>
                 </Body>
-                <DropdownAlert ref={ref => this.dropDownAlertRef = ref} />
+                <DropdownAlert ref={ref => this.dropDownAlertRef = ref}
+                    isRTL={isRTL}
+                    contentContainerStyle={{ flex: 1, flexDirection: isRTL ? 'row-reverse' : 'row' }} />
             </Container>
         );
     }
 }
 
-export default ForgotPassword;
+const mapStateToProps = state => {
+    return {
+        reseted: state.account.reseted,
+        isRTL: state.account.isRTL,
+    }
+}
+
+const mapDispatchToProps = dispatch => {
+    return {
+        resetPassword: (data) => {
+            dispatch(resetPassword(data))
+        }
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ForgotPassword);

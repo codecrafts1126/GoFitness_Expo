@@ -5,11 +5,11 @@ import{AsyncStorage, TouchableOpacity, Dimensions, View, Image, ScrollView, Flat
 import Icon from 'react-native-vector-icons/Ionicons';
 import {Grid, Row, Col } from 'react-native-easy-grid';
 import { Container, Body, Thumbnail, Text, List, Right, Card, CardItem, ListItem} from 'native-base';
-import ConfigApp from '../utils/ConfigApp';
+import configs from '../utils/configs';
 import ListEmpty from './ListEmpty';
 import Strings from '../utils/Strings';
 
-var styles = require('../../assets/files/Styles');
+var styles = require('@utils/styles');
 var {height, width} = Dimensions.get('window');
 
 class QuotesFav extends React.Component {

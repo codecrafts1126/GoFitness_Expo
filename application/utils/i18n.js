@@ -6,6 +6,7 @@ import i18n from "i18n-js";
 const en = require("../translations/en");
 const ar = require("../translations/ar");
 const he = require("../translations/he");
+const ru = require("../translations/ru");
 const cn = require("../translations/cn");
 
 const rtlLanguages = [
@@ -25,7 +26,7 @@ const missingTranslationRegex = /^\[missing ".*" translation\]$/
 
 const setI18nConfig = () => {
   i18n.fallbacks = true
-  i18n.translations = { en, ar, he, cn };
+  i18n.translations = { en, ar, he, ru, cn };
   i18n.defaultLocale = 'en'
   // I18nManager.forceRTL(false);
 };
